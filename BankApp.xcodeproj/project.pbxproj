@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		409EDB03297708790087FBB3 /* FilialsAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 409EDB02297708790087FBB3 /* FilialsAPI.swift */; };
+		409EDB05297708840087FBB3 /* FilialModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 409EDB04297708840087FBB3 /* FilialModel.swift */; };
+		409EDB072977088F0087FBB3 /* FilialProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 409EDB062977088F0087FBB3 /* FilialProvider.swift */; };
 		40EA83022976FFB700510DE4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40EA83012976FFB700510DE4 /* AppDelegate.swift */; };
 		40EA83042976FFB700510DE4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40EA83032976FFB700510DE4 /* SceneDelegate.swift */; };
 		40EA83092976FFB700510DE4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 40EA83072976FFB700510DE4 /* Main.storyboard */; };
@@ -22,6 +25,9 @@
 
 /* Begin PBXFileReference section */
 		36C4C40621253A85840CABAD /* Pods-BankApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BankApp.debug.xcconfig"; path = "Target Support Files/Pods-BankApp/Pods-BankApp.debug.xcconfig"; sourceTree = "<group>"; };
+		409EDB02297708790087FBB3 /* FilialsAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilialsAPI.swift; sourceTree = "<group>"; };
+		409EDB04297708840087FBB3 /* FilialModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilialModel.swift; sourceTree = "<group>"; };
+		409EDB062977088F0087FBB3 /* FilialProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilialProvider.swift; sourceTree = "<group>"; };
 		40EA82FE2976FFB700510DE4 /* BankApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BankApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		40EA83012976FFB700510DE4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		40EA83032976FFB700510DE4 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -59,6 +65,16 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		409EDB01297708600087FBB3 /* APISets */ = {
+			isa = PBXGroup;
+			children = (
+				409EDB02297708790087FBB3 /* FilialsAPI.swift */,
+				409EDB04297708840087FBB3 /* FilialModel.swift */,
+				409EDB062977088F0087FBB3 /* FilialProvider.swift */,
+			);
+			path = APISets;
+			sourceTree = "<group>";
+		};
 		40EA82F52976FFB700510DE4 = {
 			isa = PBXGroup;
 			children = (
@@ -80,6 +96,7 @@
 		40EA83002976FFB700510DE4 /* BankApp */ = {
 			isa = PBXGroup;
 			children = (
+				409EDB01297708600087FBB3 /* APISets */,
 				40EA83152977011B00510DE4 /* Controllers */,
 				40EA83032976FFB700510DE4 /* SceneDelegate.swift */,
 				40EA83012976FFB700510DE4 /* AppDelegate.swift */,
@@ -271,10 +288,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				40EA831B2977019C00510DE4 /* MapController.swift in Sources */,
+				409EDB03297708790087FBB3 /* FilialsAPI.swift in Sources */,
 				40EA83242977020000510DE4 /* SettingsController.swift in Sources */,
+				409EDB072977088F0087FBB3 /* FilialProvider.swift in Sources */,
 				40EA83172977014000510DE4 /* TabBarController.swift in Sources */,
 				40EA83022976FFB700510DE4 /* AppDelegate.swift in Sources */,
 				40EA83042976FFB700510DE4 /* SceneDelegate.swift in Sources */,
+				409EDB05297708840087FBB3 /* FilialModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -422,6 +442,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 526TNP28LN;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = BankApp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -429,6 +450,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -450,6 +472,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 526TNP28LN;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = BankApp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -457,6 +480,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
