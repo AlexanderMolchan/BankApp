@@ -9,7 +9,8 @@ import Foundation
 import Moya
 
 enum FilialsApi {
-    case getCity
+    case getFilialsCity
+    case getAtmCity
     case getAtmInfo(city: String)
     case getFilials(city: String)
 }
@@ -17,9 +18,9 @@ enum FilialsApi {
 extension FilialsApi: TargetType {
     var baseURL: URL {
         switch self {
-            case .getAtmInfo:
+            case .getAtmInfo, .getAtmCity:
                 return URL(string: "https://belarusbank.by/api/atm")!
-            case .getFilials, .getCity:
+            case .getFilials, .getFilialsCity:
                 return URL(string: "https://belarusbank.by/api/filials_info")!
         }
     }
@@ -32,7 +33,8 @@ extension FilialsApi: TargetType {
         switch self {
             case .getAtmInfo: return .get
             case .getFilials: return .get
-            case .getCity: return .get
+            case .getFilialsCity: return .get
+            case .getAtmCity: return .get
         }
     }
     
@@ -52,7 +54,7 @@ extension FilialsApi: TargetType {
                 params["city"] = city
             case .getFilials(let city):
                 params["city"] = city
-            case .getCity:
+            case .getFilialsCity, .getAtmCity:
                 return nil
         }
         return params
@@ -60,7 +62,7 @@ extension FilialsApi: TargetType {
     
     var encoding: ParameterEncoding {
         switch self {
-            case .getAtmInfo, .getFilials, .getCity:
+            case .getAtmInfo, .getFilials, .getFilialsCity, .getAtmCity:
                 return URLEncoding.queryString
         }
     }
