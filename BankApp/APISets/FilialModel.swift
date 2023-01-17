@@ -7,13 +7,30 @@
 
 import Foundation
 
-struct CityInfo: Decodable {
+struct FilialsCity: Decodable {
     var city: String
     var cityType: String
 
     enum CodingKeys: String, CodingKey {
         case city = "name"
         case cityType = "name_type"
+    }
+    
+    init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        self.city = try container.decode(String.self, forKey: .city)
+        self.cityType = try container.decode(String.self, forKey: .cityType)
+    }
+    
+}
+
+struct AtmCity: Decodable {
+    var city: String
+    var cityType: String
+
+    enum CodingKeys: String, CodingKey {
+        case city = "city"
+        case cityType = "city_type"
     }
     
     init(from decoder: Decoder) throws {

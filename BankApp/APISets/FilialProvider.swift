@@ -40,11 +40,24 @@ final class FilialProvider {
         }
     }
     
-    func getCityList(success: @escaping ArrayResponce<CityInfo>, failure: @escaping Error) {
-        provider.request(.getCity) { result in
+    func getFilialCityList(success: @escaping ArrayResponce<FilialsCity>, failure: @escaping Error) {
+        provider.request(.getFilialsCity) { result in
             switch result {
                 case .success(let responce):
-                    guard let cityList = try? JSONDecoder().decode([CityInfo].self, from: responce.data)
+                    guard let cityList = try? JSONDecoder().decode([FilialsCity].self, from: responce.data)
+                    else { return }
+                    success(cityList)
+                case .failure(let error):
+                    failure(error.localizedDescription)
+            }
+        }
+    }
+    
+    func getAtmCityList(success: @escaping ArrayResponce<AtmCity>, failure: @escaping Error) {
+        provider.request(.getAtmCity) { result in
+            switch result {
+                case .success(let responce):
+                    guard let cityList = try? JSONDecoder().decode([AtmCity].self, from: responce.data)
                     else { return }
                     success(cityList)
                 case .failure(let error):
