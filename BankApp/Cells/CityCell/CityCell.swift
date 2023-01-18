@@ -17,9 +17,17 @@ class CityCell: UICollectionViewCell {
     }
     
     func setCollectionCell(city: String) {
+        backgroundColor = .systemCyan.withAlphaComponent(0.9)
+        layer.borderWidth = 0
+        layer.borderColor = UIColor.systemCyan.cgColor
+        cityLabel.textColor = .white
         cityLabel.text = city
         layer.cornerRadius = 10
-        layer.borderWidth = self.isSelected ? 2 : 0
+        if self.isSelected {
+            backgroundColor = .white.withAlphaComponent(0.9)
+            cityLabel.textColor = .systemCyan
+            layer.borderWidth = 2
+        }
     }
 
 }

@@ -17,9 +17,17 @@ class FilterCell: UICollectionViewCell {
     }
     
     func set(button: FilterButtons) {
+        backgroundColor = .systemCyan.withAlphaComponent(0.9)
+        layer.borderWidth = 0
+        layer.borderColor = UIColor.systemCyan.cgColor
+        buttonLabel.textColor = .white
         buttonLabel.text = button.name
         layer.cornerRadius = 10
-        layer.borderWidth = self.isSelected ? 2 : 0
+        if self.isSelected {
+            self.layer.borderWidth = 2
+            backgroundColor = .white.withAlphaComponent(0.9)
+            buttonLabel.textColor = .systemCyan
+        }
     }
 
 }
