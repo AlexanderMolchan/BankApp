@@ -19,8 +19,8 @@ final class FilialProvider {
     func getAtmInfo(city: String, success: @escaping ArrayResponce<AtmInfo>, failure: @escaping Error) {
         provider.request(.getAtmInfo(city: city)) { result in
             switch result {
-                case .success(let responce):
-                    guard let atmInfo = try? JSONDecoder().decode([AtmInfo].self, from: responce.data) else { return }
+                case .success(let response):
+                    guard let atmInfo = try? JSONDecoder().decode([AtmInfo].self, from: response.data) else { return }
                     success(atmInfo)
                 case .failure(let error):
                     failure(error.localizedDescription)
@@ -31,8 +31,8 @@ final class FilialProvider {
     func getFilialsInfo(city: String, success: @escaping ArrayResponce<FilialInfo>, failure: @escaping Error) {
         provider.request(.getFilials(city: city)) { result in
             switch result {
-                case .success(let responce):
-                    guard let filialInfo = try? JSONDecoder().decode([FilialInfo].self, from: responce.data) else { return }
+                case .success(let response):
+                    guard let filialInfo = try? JSONDecoder().decode([FilialInfo].self, from: response.data) else { return }
                     success(filialInfo)
                 case .failure(let error):
                     failure(error.localizedDescription)
@@ -43,8 +43,8 @@ final class FilialProvider {
     func getFilialCityList(success: @escaping ArrayResponce<FilialsCity>, failure: @escaping Error) {
         provider.request(.getFilialsCity) { result in
             switch result {
-                case .success(let responce):
-                    guard let cityList = try? JSONDecoder().decode([FilialsCity].self, from: responce.data)
+                case .success(let response):
+                    guard let cityList = try? JSONDecoder().decode([FilialsCity].self, from: response.data)
                     else { return }
                     success(cityList)
                 case .failure(let error):
@@ -56,8 +56,8 @@ final class FilialProvider {
     func getAtmCityList(success: @escaping ArrayResponce<AtmCity>, failure: @escaping Error) {
         provider.request(.getAtmCity) { result in
             switch result {
-                case .success(let responce):
-                    guard let cityList = try? JSONDecoder().decode([AtmCity].self, from: responce.data)
+                case .success(let response):
+                    guard let cityList = try? JSONDecoder().decode([AtmCity].self, from: response.data)
                     else { return }
                     success(cityList)
                 case .failure(let error):

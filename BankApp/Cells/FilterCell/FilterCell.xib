@@ -16,10 +16,10 @@
                 <rect key="frame" x="0.0" y="0.0" width="254" height="76"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6n6-NB-WhI">
-                        <rect key="frame" x="5" y="5" width="244" height="66"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6n6-NB-WhI">
+                        <rect key="frame" x="0.0" y="5" width="254" height="66"/>
                         <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="20"/>
-                        <color key="textColor" red="0.3587502736" green="0.96151972600000002" blue="0.74244056479999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
@@ -27,8 +27,8 @@
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <constraints>
                 <constraint firstAttribute="bottom" secondItem="6n6-NB-WhI" secondAttribute="bottom" constant="5" id="Np1-v1-AKF"/>
-                <constraint firstAttribute="trailing" secondItem="6n6-NB-WhI" secondAttribute="trailing" constant="5" id="UwG-Mm-6hG"/>
-                <constraint firstItem="6n6-NB-WhI" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="5" id="chh-U7-pM9"/>
+                <constraint firstAttribute="trailing" secondItem="6n6-NB-WhI" secondAttribute="trailing" id="UwG-Mm-6hG"/>
+                <constraint firstItem="6n6-NB-WhI" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="chh-U7-pM9"/>
                 <constraint firstItem="6n6-NB-WhI" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="5" id="t7Z-Nt-oEk"/>
             </constraints>
             <size key="customSize" width="254" height="76"/>

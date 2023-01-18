@@ -30,7 +30,6 @@ class MapController: UIViewController {
         clusterSettings()
         collectionViewsSettings()
         getCityData()
-
     }
     
     private func configurateMapView() {
@@ -58,6 +57,9 @@ class MapController: UIViewController {
         filterCollectionView.dataSource = self
         filterCollectionView.delegate = self
         
+        filterCollectionView.contentInset = UIEdgeInsets(top: 0, left: 5, bottom: 0, right: 5)
+        cityCollectionView.contentInset = UIEdgeInsets(top: 0, left: 5, bottom: 0, right: 5)
+                
         cityCollectionView.register(UINib(nibName: CityCell.id, bundle: nil), forCellWithReuseIdentifier: CityCell.id)
         filterCollectionView.register(UINib(nibName: FilterCell.id, bundle: nil), forCellWithReuseIdentifier: FilterCell.id)
     }
@@ -90,6 +92,9 @@ class MapController: UIViewController {
 
 }
 
+// MARK: -
+// MARK: - GoogleMap extension
+
 extension MapController: GMSMapViewDelegate {
     func mapView(_ mapView: GMSMapView, didTap marker: GMSMarker) -> Bool {
         return true
@@ -111,6 +116,9 @@ extension MapController: CLLocationManagerDelegate {
     }
     
 }
+
+// MARK: -
+// MARK: - CollectionViews extension
 
 extension MapController: UICollectionViewDataSource, UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -149,6 +157,21 @@ extension MapController: UICollectionViewDataSource, UICollectionViewDelegate {
         }
     }
     
+}
+
+extension MapController: UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        guard let screen = view.window?.windowScene?.screen else { return .zero }
+        let inset = 5.0
+        let width = (screen.bounds.width - (inset * (6))) / 3
+        return CGSize(width: width, height: 30)
+    }
+}
+
+// MARK: -
+// MARK: - Get Data functions extencion
+
+extension MapController {
     private func drawMarkersFor(index: IndexPath, city: String) {
         mapView.clear()
         clusterManager?.clearItems()
@@ -225,4 +248,10 @@ extension MapController: UICollectionViewDataSource, UICollectionViewDelegate {
         }
     }
     
+    private func alertResponceCrash() {
+        let alert = UIAlertController(title: "Ошибка", message: "В данном регионе не обнаружено банкоматов", preferredStyle: .alert)
+        let okBtn = UIAlertAction(title: "Печально(", style: .default)
+        alert.addAction(okBtn)
+        present(alert, animated: true)
+    }
 }
