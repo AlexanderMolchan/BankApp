@@ -30,24 +30,24 @@
                     <rect key="frame" x="178" y="407.66666666666669" width="37" height="37"/>
                     <color key="color" red="0.9210537365" green="1" blue="0.34143100009999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                 </activityIndicatorView>
-                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="WJ9-J7-hmB">
-                    <rect key="frame" x="0.0" y="738" width="393" height="30"/>
+                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="WJ9-J7-hmB">
+                    <rect key="frame" x="0.0" y="718" width="393" height="40"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="30" id="teH-RK-qHe"/>
+                        <constraint firstAttribute="height" constant="40" id="teH-RK-qHe"/>
                     </constraints>
-                    <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="kyC-ZP-2LH">
+                    <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="kyC-ZP-2LH">
                         <size key="itemSize" width="128" height="128"/>
                         <size key="headerReferenceSize" width="0.0" height="0.0"/>
                         <size key="footerReferenceSize" width="0.0" height="0.0"/>
                         <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                     </collectionViewFlowLayout>
                 </collectionView>
-                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="vMQ-ZC-Mww">
-                    <rect key="frame" x="0.0" y="778" width="393" height="30"/>
+                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="vMQ-ZC-Mww">
+                    <rect key="frame" x="0.0" y="768" width="393" height="40"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="30" id="63J-56-baE"/>
+                        <constraint firstAttribute="height" constant="40" id="63J-56-baE"/>
                     </constraints>
                     <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="hEi-zC-3Az">
                         <size key="itemSize" width="128" height="128"/>
