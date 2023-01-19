@@ -22,6 +22,10 @@
 		40DE9BCB2979A50700FB3ACC /* GemAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40DE9BCA2979A50700FB3ACC /* GemAPI.swift */; };
 		40DE9BCD2979A69E00FB3ACC /* GemModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40DE9BCC2979A69D00FB3ACC /* GemModels.swift */; };
 		40DE9BCF2979A6B400FB3ACC /* GemProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40DE9BCE2979A6B400FB3ACC /* GemProvider.swift */; };
+		40DE9BD32979B20400FB3ACC /* StoneCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40DE9BD12979B20400FB3ACC /* StoneCell.swift */; };
+		40DE9BD42979B20400FB3ACC /* StoneCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 40DE9BD22979B20400FB3ACC /* StoneCell.xib */; };
+		40DE9BD82979B9CE00FB3ACC /* IngotCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40DE9BD62979B9CE00FB3ACC /* IngotCell.swift */; };
+		40DE9BD92979B9CE00FB3ACC /* IngotCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 40DE9BD72979B9CE00FB3ACC /* IngotCell.xib */; };
 		40EA83022976FFB700510DE4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40EA83012976FFB700510DE4 /* AppDelegate.swift */; };
 		40EA83042976FFB700510DE4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40EA83032976FFB700510DE4 /* SceneDelegate.swift */; };
 		40EA83092976FFB700510DE4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 40EA83072976FFB700510DE4 /* Main.storyboard */; };
@@ -50,6 +54,10 @@
 		40DE9BCA2979A50700FB3ACC /* GemAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GemAPI.swift; sourceTree = "<group>"; };
 		40DE9BCC2979A69D00FB3ACC /* GemModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GemModels.swift; sourceTree = "<group>"; };
 		40DE9BCE2979A6B400FB3ACC /* GemProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GemProvider.swift; sourceTree = "<group>"; };
+		40DE9BD12979B20400FB3ACC /* StoneCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoneCell.swift; sourceTree = "<group>"; };
+		40DE9BD22979B20400FB3ACC /* StoneCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StoneCell.xib; sourceTree = "<group>"; };
+		40DE9BD62979B9CE00FB3ACC /* IngotCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngotCell.swift; sourceTree = "<group>"; };
+		40DE9BD72979B9CE00FB3ACC /* IngotCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = IngotCell.xib; sourceTree = "<group>"; };
 		40EA82FE2976FFB700510DE4 /* BankApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BankApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		40EA83012976FFB700510DE4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		40EA83032976FFB700510DE4 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -126,6 +134,7 @@
 		40DE9BC42979A3B800FB3ACC /* IngotController */ = {
 			isa = PBXGroup;
 			children = (
+				40DE9BD52979B9C000FB3ACC /* Cell */,
 				40DE9BC02979A3B200FB3ACC /* IngotViewController.swift */,
 				40DE9BC12979A3B200FB3ACC /* IngotViewController.xib */,
 			);
@@ -140,6 +149,24 @@
 				40DE9BCE2979A6B400FB3ACC /* GemProvider.swift */,
 			);
 			path = StonesIngotsAPI;
+			sourceTree = "<group>";
+		};
+		40DE9BD02979B1EE00FB3ACC /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				40DE9BD12979B20400FB3ACC /* StoneCell.swift */,
+				40DE9BD22979B20400FB3ACC /* StoneCell.xib */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		40DE9BD52979B9C000FB3ACC /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				40DE9BD62979B9CE00FB3ACC /* IngotCell.swift */,
+				40DE9BD72979B9CE00FB3ACC /* IngotCell.xib */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 		40EA82F52976FFB700510DE4 = {
@@ -208,6 +235,7 @@
 		40EA83262977020400510DE4 /* StonesController */ = {
 			isa = PBXGroup;
 			children = (
+				40DE9BD02979B1EE00FB3ACC /* Cell */,
 				40DE9BC52979A40900FB3ACC /* StonesViewController.swift */,
 				40DE9BC62979A40900FB3ACC /* StonesViewController.xib */,
 			);
@@ -288,6 +316,8 @@
 				409EDB132977166D0087FBB3 /* CityCell.xib in Resources */,
 				40EA830E2976FFB800510DE4 /* LaunchScreen.storyboard in Resources */,
 				40DE9BC82979A40900FB3ACC /* StonesViewController.xib in Resources */,
+				40DE9BD92979B9CE00FB3ACC /* IngotCell.xib in Resources */,
+				40DE9BD42979B20400FB3ACC /* StoneCell.xib in Resources */,
 				40EA830B2976FFB800510DE4 /* Assets.xcassets in Resources */,
 				409EDB0C297716360087FBB3 /* FilterCell.xib in Resources */,
 				40EA83092976FFB700510DE4 /* Main.storyboard in Resources */,
@@ -362,7 +392,9 @@
 			files = (
 				40EA831B2977019C00510DE4 /* MapController.swift in Sources */,
 				40DE9BCD2979A69E00FB3ACC /* GemModels.swift in Sources */,
+				40DE9BD82979B9CE00FB3ACC /* IngotCell.swift in Sources */,
 				409EDB1629771CE40087FBB3 /* FilterButtonsEnum.swift in Sources */,
+				40DE9BD32979B20400FB3ACC /* StoneCell.swift in Sources */,
 				409EDB03297708790087FBB3 /* FilialsAPI.swift in Sources */,
 				409EDB122977166D0087FBB3 /* CityCell.swift in Sources */,
 				40DE9BC72979A40900FB3ACC /* StonesViewController.swift in Sources */,
