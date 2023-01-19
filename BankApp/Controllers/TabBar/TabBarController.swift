@@ -37,9 +37,10 @@ class TabBarController: UITabBarController {
 
     private func configurateTabBar() {
         let mapController = UINavigationController(rootViewController: MapController(nibName: String(describing: MapController.self), bundle: nil))
-        let settingsController = UINavigationController(rootViewController: SettingsController(nibName: String(describing: SettingsController.self), bundle: nil))
+        let stonesController = UINavigationController(rootViewController: StonesViewController(nibName: String(describing: StonesViewController.self), bundle: nil))
+        let ingotController = UINavigationController(rootViewController: IngotViewController(nibName: String(describing: IngotViewController.self), bundle: nil))
         
-        viewControllers = [mapController, settingsController]
+        viewControllers = [mapController, stonesController, ingotController]
         tabBar.tintColor = .systemCyan
         tabBar.unselectedItemTintColor = .lightGray
         tabBar.backgroundColor = .white
@@ -48,7 +49,8 @@ class TabBarController: UITabBarController {
         tabBar.layer.borderColor = UIColor.lightGray.cgColor
         
         mapController.tabBarItem = UITabBarItem(title: "Map", image: UIImage(systemName: "map.circle.fill"), tag: 0)
-        settingsController.tabBarItem = UITabBarItem(title: "Settings", image: UIImage(systemName: "gearshape.2"), tag: 1)
+        stonesController.tabBarItem = UITabBarItem(title: "Stones", image: UIImage(systemName: "airtag"), tag: 1)
+        ingotController.tabBarItem = UITabBarItem(title: "Ingots", image: UIImage(systemName: "eye"), tag: 2)
     }
     
 }

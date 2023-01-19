@@ -21,6 +21,9 @@ final class FilialProvider {
             switch result {
                 case .success(let response):
                     guard let atmInfo = try? JSONDecoder().decode([AtmInfo].self, from: response.data) else { return }
+                    if atmInfo.count == 0 {
+                        failure("Empty array")
+                    }
                     success(atmInfo)
                 case .failure(let error):
                     failure(error.localizedDescription)

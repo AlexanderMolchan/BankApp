@@ -148,7 +148,8 @@ extension MapController: UICollectionViewDataSource, UICollectionViewDelegate {
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if collectionView == cityCollectionView {
-            self.selectedFilter = filterButtons[indexPath.row]
+//            self.selectedFilter = filterButtons[indexPath.row]
+            self.citySelectedIndex = indexPath
             self.drawMarkersFor(index: filterSelectedIndex, city: towns[citySelectedIndex.row])
             self.cityCollectionView.reloadData()
         } else {
@@ -202,6 +203,7 @@ extension MapController {
                 self.activityIndicator.stopAnimating()
             } failure: { error in
                 print("We have \(error)")
+                self.alertResponceCrash()
                 self.activityIndicator.stopAnimating()
             }
             
