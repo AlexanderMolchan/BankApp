@@ -23,6 +23,7 @@ class MapController: UIViewController {
     private var filterButtons = FilterButtons.allCases
     private var citySelectedIndex = IndexPath(row: 0, section: 0)
     private var filterSelectedIndex = IndexPath(row: 0, section: 0)
+    private var selectedFilter = FilterButtons.all
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -147,7 +148,7 @@ extension MapController: UICollectionViewDataSource, UICollectionViewDelegate {
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if collectionView == cityCollectionView {
-            self.citySelectedIndex = indexPath
+            self.selectedFilter = filterButtons[indexPath.row]
             self.drawMarkersFor(index: filterSelectedIndex, city: towns[citySelectedIndex.row])
             self.cityCollectionView.reloadData()
         } else {
@@ -176,6 +177,7 @@ extension MapController {
         mapView.clear()
         clusterManager?.clearItems()
         activityIndicator.startAnimating()
+        
         if index == IndexPath(row: 0, section: 0) {
             FilialProvider().getAtmInfo(city: city) { [weak self] result in
                 guard let self else { return }
@@ -213,6 +215,20 @@ extension MapController {
                 self.activityIndicator.stopAnimating()
             }
         }
+    }
+    
+    private func newdrawMarkersFor(index: IndexPath, city: String) {
+        switch selectedFilter {
+                
+            case .all:
+                <#code#>
+            case .atm:
+                <#code#>
+            case .filial:
+                <#code#>
+        }
+        
+        // нужно сделать корояе, обернуть функции запроса в отдельные функции.
     }
 
     private func drawAtm(source: [AtmInfo]) {
