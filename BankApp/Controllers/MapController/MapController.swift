@@ -90,7 +90,48 @@ class MapController: UIViewController {
             print("We have \(error)")
         }
     }
-
+    
+    @IBAction func createRadiusDidTap(_ sender: Any) {
+        mapView.clear()
+        clusterManager?.clearItems()
+        activityIndicator.startAnimating()
+        guard let myPosition = mapView.myLocation else { return }
+        let circle = GMSCircle(position: myPosition.coordinate, radius: 5000)
+        circle.fillColor = UIColor.green.withAlphaComponent(0.1)
+        circle.map = mapView
+        
+        FilialProvider().getAtmInfo { result in
+            result.forEach { model in
+                guard let longitude = Double(model.longitude),
+                      let latitude = Double(model.latitude) else { return }
+                self.createMarker(coordinate: CLLocationCoordinate2D(latitude: latitude, longitude: longitude), position: myPosition)
+            }
+        } failure: { error in
+            self.activityIndicator.stopAnimating()
+            self.alertResponceCrash()
+        }
+        
+        FilialProvider().getFilialsInfo { result in
+            result.forEach { model in
+                guard let longitude = Double(model.longitude),
+                      let latitude = Double(model.latitude) else { return }
+                self.createMarker(coordinate: CLLocationCoordinate2D(latitude: latitude, longitude: longitude), position: myPosition)
+                self.activityIndicator.stopAnimating()
+                }
+        } failure: { error in
+            self.activityIndicator.stopAnimating()
+            self.alertResponceCrash()
+        }
+    }
+    
+    private func createMarker(coordinate: CLLocationCoordinate2D, position: CLLocation) {
+        let distance = position.distance(from: CLLocation(latitude: coordinate.latitude, longitude: coordinate.longitude))
+        if distance < 5000 {
+            let marker = GMSMarker(position: CLLocationCoordinate2D(latitude: coordinate.latitude, longitude: coordinate.longitude))
+            marker.map = mapView
+        }
+    }
+            
 }
 
 // MARK: -

@@ -27,12 +27,16 @@
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                 </view>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NwD-gJ-yTT">
-                    <rect key="frame" x="270" y="75" width="107" height="32.666666666666657"/>
+                    <rect key="frame" x="270" y="59" width="107" height="32.666666666666657"/>
                     <color key="tintColor" systemColor="systemCyanColor"/>
                     <state key="normal" title="Button"/>
                     <buttonConfiguration key="configuration" style="filled" title="Ближайшие">
                         <fontDescription key="titleFontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="17"/>
+                        <color key="baseBackgroundColor" systemColor="systemCyanColor"/>
                     </buttonConfiguration>
+                    <connections>
+                        <action selector="createRadiusDidTap:" destination="-1" eventType="touchUpInside" id="ib2-TC-cCB"/>
+                    </connections>
                 </button>
                 <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="RQR-n0-r7q">
                     <rect key="frame" x="178" y="407.66666666666669" width="37" height="37"/>
@@ -69,7 +73,7 @@
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
                 <constraint firstItem="RQR-n0-r7q" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="09W-g0-x7E"/>
-                <constraint firstItem="NwD-gJ-yTT" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="16" id="452-Gz-gYR"/>
+                <constraint firstItem="NwD-gJ-yTT" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="452-Gz-gYR"/>
                 <constraint firstItem="vMQ-ZC-Mww" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="9iI-cD-fmO"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="NwD-gJ-yTT" secondAttribute="trailing" constant="16" id="AYM-Pp-64x"/>
                 <constraint firstItem="vMQ-ZC-Mww" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="EEA-VB-iNZ"/>
