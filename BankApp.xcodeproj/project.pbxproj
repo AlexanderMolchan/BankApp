@@ -93,14 +93,14 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
-		409EDB01297708600087FBB3 /* APISets */ = {
+		409EDB01297708600087FBB3 /* FilialApiSets */ = {
 			isa = PBXGroup;
 			children = (
 				409EDB02297708790087FBB3 /* FilialsAPI.swift */,
 				409EDB04297708840087FBB3 /* FilialModel.swift */,
 				409EDB062977088F0087FBB3 /* FilialProvider.swift */,
 			);
-			path = APISets;
+			path = FilialApiSets;
 			sourceTree = "<group>";
 		};
 		409EDB082977161B0087FBB3 /* Cells */ = {
@@ -141,14 +141,14 @@
 			path = IngotController;
 			sourceTree = "<group>";
 		};
-		40DE9BC92979A4EC00FB3ACC /* StonesIngotsAPI */ = {
+		40DE9BC92979A4EC00FB3ACC /* GemApiSets */ = {
 			isa = PBXGroup;
 			children = (
 				40DE9BCA2979A50700FB3ACC /* GemAPI.swift */,
 				40DE9BCC2979A69D00FB3ACC /* GemModels.swift */,
 				40DE9BCE2979A6B400FB3ACC /* GemProvider.swift */,
 			);
-			path = StonesIngotsAPI;
+			path = GemApiSets;
 			sourceTree = "<group>";
 		};
 		40DE9BD02979B1EE00FB3ACC /* Cell */ = {
@@ -190,9 +190,8 @@
 		40EA83002976FFB700510DE4 /* BankApp */ = {
 			isa = PBXGroup;
 			children = (
-				409EDB082977161B0087FBB3 /* Cells */,
-				409EDB01297708600087FBB3 /* APISets */,
-				40DE9BC92979A4EC00FB3ACC /* StonesIngotsAPI */,
+				409EDB01297708600087FBB3 /* FilialApiSets */,
+				40DE9BC92979A4EC00FB3ACC /* GemApiSets */,
 				40EA83152977011B00510DE4 /* Controllers */,
 				40EA83032976FFB700510DE4 /* SceneDelegate.swift */,
 				40EA83012976FFB700510DE4 /* AppDelegate.swift */,
@@ -226,6 +225,7 @@
 		40EA831D297701A000510DE4 /* MapController */ = {
 			isa = PBXGroup;
 			children = (
+				409EDB082977161B0087FBB3 /* Cells */,
 				40EA83192977019C00510DE4 /* MapController.swift */,
 				40EA831A2977019C00510DE4 /* MapController.xib */,
 			);
