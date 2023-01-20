@@ -27,14 +27,17 @@ class IngotCell: UITableViewCell {
         var fiftyCost = ""
         switch type {
             case .gold:
+                typeLabel.textColor = .systemOrange
                 tenCost = model.goldTen
                 twentyCost = model.goldTwenty
                 fiftyCost = model.goldFifty
             case .silver:
+                typeLabel.textColor = .lightGray
                 tenCost = model.silverTen
                 twentyCost = model.silverTwenty
                 fiftyCost = model.silverFifty
             case .platinum:
+                typeLabel.textColor = .darkGray
                 tenCost = model.platinumTen
                 twentyCost = model.platinumTwenty
                 fiftyCost = model.platinumFifty

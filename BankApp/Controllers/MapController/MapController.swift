@@ -178,44 +178,37 @@ extension MapController {
         mapView.clear()
         clusterManager?.clearItems()
         activityIndicator.startAnimating()
-        
         if index == IndexPath(row: 0, section: 0) {
-            FilialProvider().getAtmInfo(city: city) { [weak self] result in
-                guard let self else { return }
-                self.drawAtm(source: result)
-                FilialProvider().getFilialsInfo(city: city) { [weak self] result in
-                    guard let self else { return }
-                    self.drawFilial(source: result)
-                    self.activityIndicator.stopAnimating()
-                } failure: { error in
-                    print("We have \(error)")
-                    self.activityIndicator.stopAnimating()
-                }
-            } failure: { error in
-                print("We have \(error)")
-                self.activityIndicator.stopAnimating()
-            }
-            
+            getAndDrawFilialData(city: city)
+            getAndDrawAtmData(city: city)
         } else if index == IndexPath(row: 1, section: 0) {
-            FilialProvider().getAtmInfo(city: city) { [weak self] result in
-                guard let self else { return }
-                self.drawAtm(source: result)
-                self.activityIndicator.stopAnimating()
-            } failure: { error in
-                print("We have \(error)")
-                self.alertResponceCrash()
-                self.activityIndicator.stopAnimating()
-            }
-            
+            getAndDrawAtmData(city: city)
         } else if index == IndexPath(row: 2, section: 0) {
-            FilialProvider().getFilialsInfo(city: city) { [weak self] result in
-                guard let self else { return }
-                self.drawFilial(source: result)
-                self.activityIndicator.stopAnimating()
-            } failure: { error in
-                print("We have \(error)")
-                self.activityIndicator.stopAnimating()
-            }
+            getAndDrawFilialData(city: city)
+        }
+    }
+    
+    private func getAndDrawAtmData(city: String) {
+        FilialProvider().getAtmInfo(city: city) { [weak self] result in
+            guard let self else { return }
+            print(result)
+            self.drawAtm(source: result)
+            self.activityIndicator.stopAnimating()
+        } failure: { error in
+            print("We have \(error)")
+            self.alertResponceCrash()
+            self.activityIndicator.stopAnimating()
+        }
+    }
+    
+    private func getAndDrawFilialData(city: String) {
+        FilialProvider().getFilialsInfo(city: city) { [weak self] result in
+            guard let self else { return }
+            self.drawFilial(source: result)
+            self.activityIndicator.stopAnimating()
+        } failure: { error in
+            print("We have \(error)")
+            self.activityIndicator.stopAnimating()
         }
     }
     
@@ -267,7 +260,7 @@ extension MapController {
     }
     
     private func alertResponceCrash() {
-        let alert = UIAlertController(title: "Ошибка", message: "В данном регионе не обнаружено банкоматов", preferredStyle: .alert)
+        let alert = UIAlertController(title: "Ошибка", message: "В данном регионе не обнаружено банкоматов либо отделений!", preferredStyle: .alert)
         let okBtn = UIAlertAction(title: "Печально(", style: .default)
         alert.addAction(okBtn)
         present(alert, animated: true)
