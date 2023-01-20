@@ -32,13 +32,17 @@ class IngotViewController: UIViewController {
         navigationController?.navigationBar.prefersLargeTitles = true
         navigationController?.navigationBar.tintColor = .systemCyan
         navigationItem.title = "Драгоценные металлы"
-        navigationController?.navigationBar.largeTitleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.systemCyan, NSAttributedString.Key.font: UIFont(name: "Marker Felt", size: 40) as Any]
+        navigationController?.navigationBar.largeTitleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.systemCyan, NSAttributedString.Key.font: UIFont(name: "Marker Felt", size: 30) as Any]
     }
     
     private func getData() {
         activityIndicator.startAnimating()
         GemProvider().getIngotsInfo { result in
-            self.ingotArray = result
+            result.forEach { model in
+                if model.goldTen != "0.00" || model.silverTen != "0.00" || model.platinumTen != "0.00" {
+                    self.ingotArray.append(model)
+                }
+            }
             self.activityIndicator.stopAnimating()
         } failure: { error in
             self.activityIndicator.stopAnimating()

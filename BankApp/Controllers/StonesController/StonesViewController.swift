@@ -12,6 +12,7 @@ class StonesViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
+    private var sorted = false
     private var stonesArray = [StoneModel]() {
         didSet {
             tableView.reloadData()
@@ -20,6 +21,7 @@ class StonesViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationBarSettings()
         tableViewSettings()
         getData()
     }
@@ -28,10 +30,24 @@ class StonesViewController: UIViewController {
         tableView.delegate = self
         tableView.dataSource = self
         tableView.register(UINib(nibName: StoneCell.id, bundle: nil), forCellReuseIdentifier: StoneCell.id)
+    }
+    
+    private func navigationBarSettings() {
         navigationController?.navigationBar.prefersLargeTitles = true
         navigationController?.navigationBar.tintColor = .systemCyan
         navigationItem.title = "Драгоценные камни"
-        navigationController?.navigationBar.largeTitleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.systemCyan, NSAttributedString.Key.font: UIFont(name: "Marker Felt", size: 40) as Any]
+        navigationController?.navigationBar.largeTitleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.systemCyan, NSAttributedString.Key.font: UIFont(name: "Marker Felt", size: 30) as Any]
+        let sortButton = UIBarButtonItem(image: UIImage(systemName: "arrow.up.arrow.down.square"), style: .done, target: self, action: #selector(sortCost))
+        navigationItem.rightBarButtonItem = sortButton
+    }
+    
+    @objc private func sortCost() {
+        sorted.toggle()
+        if sorted {
+            stonesArray.sort(by: { $0.cost > $1.cost } )
+        } else {
+            stonesArray.sort(by: { $0.cost < $1.cost } )
+        }
     }
     
     private func getData() {
