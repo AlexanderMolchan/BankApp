@@ -16,7 +16,7 @@ typealias Error = ((String) -> Void)
 final class FilialProvider {
     private let provider = MoyaProvider<FilialsApi>(plugins: [NetworkLoggerPlugin()])
     
-    func getAtmInfo(city: String, success: @escaping ArrayResponce<AtmInfo>, failure: @escaping Error) {
+    func getAtmInfo(city: String = "", success: @escaping ArrayResponce<AtmInfo>, failure: @escaping Error) {
         provider.request(.getAtmInfo(city: city)) { result in
             switch result {
                 case .success(let response):
@@ -28,7 +28,7 @@ final class FilialProvider {
         }
     }
     
-    func getFilialsInfo(city: String, success: @escaping ArrayResponce<FilialInfo>, failure: @escaping Error) {
+    func getFilialsInfo(city: String = "", success: @escaping ArrayResponce<FilialInfo>, failure: @escaping Error) {
         provider.request(.getFilials(city: city)) { result in
             switch result {
                 case .success(let response):
