@@ -8,5 +8,6 @@ target 'BankApp' do
  pod 'Moya'
  pod 'GoogleMaps'
  pod 'Google-Maps-iOS-Utils'
+ pod 'SDWebImage'
 
 end

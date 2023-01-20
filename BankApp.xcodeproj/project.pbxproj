@@ -10,6 +10,12 @@
 		40411291297B016000B40C48 /* NewsAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40411290297B016000B40C48 /* NewsAPI.swift */; };
 		40411293297B06E900B40C48 /* NewsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40411292297B06E900B40C48 /* NewsModel.swift */; };
 		40411295297B085200B40C48 /* NewsProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40411294297B085200B40C48 /* NewsProvider.swift */; };
+		40411298297B391900B40C48 /* NewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40411296297B391900B40C48 /* NewsViewController.swift */; };
+		40411299297B391900B40C48 /* NewsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 40411297297B391900B40C48 /* NewsViewController.xib */; };
+		4041129E297B39F100B40C48 /* NewsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4041129C297B39F100B40C48 /* NewsCell.swift */; };
+		4041129F297B39F100B40C48 /* NewsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4041129D297B39F100B40C48 /* NewsCell.xib */; };
+		404112A2297B480700B40C48 /* PresentedNewsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 404112A0297B480700B40C48 /* PresentedNewsController.swift */; };
+		404112A3297B480700B40C48 /* PresentedNewsController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 404112A1297B480700B40C48 /* PresentedNewsController.xib */; };
 		409EDB03297708790087FBB3 /* FilialsAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 409EDB02297708790087FBB3 /* FilialsAPI.swift */; };
 		409EDB05297708840087FBB3 /* FilialModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 409EDB04297708840087FBB3 /* FilialModel.swift */; };
 		409EDB072977088F0087FBB3 /* FilialProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 409EDB062977088F0087FBB3 /* FilialProvider.swift */; };
@@ -45,6 +51,12 @@
 		40411290297B016000B40C48 /* NewsAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsAPI.swift; sourceTree = "<group>"; };
 		40411292297B06E900B40C48 /* NewsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsModel.swift; sourceTree = "<group>"; };
 		40411294297B085200B40C48 /* NewsProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsProvider.swift; sourceTree = "<group>"; };
+		40411296297B391900B40C48 /* NewsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsViewController.swift; sourceTree = "<group>"; };
+		40411297297B391900B40C48 /* NewsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NewsViewController.xib; sourceTree = "<group>"; };
+		4041129C297B39F100B40C48 /* NewsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsCell.swift; sourceTree = "<group>"; };
+		4041129D297B39F100B40C48 /* NewsCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NewsCell.xib; sourceTree = "<group>"; };
+		404112A0297B480700B40C48 /* PresentedNewsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresentedNewsController.swift; sourceTree = "<group>"; };
+		404112A1297B480700B40C48 /* PresentedNewsController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PresentedNewsController.xib; sourceTree = "<group>"; };
 		409EDB02297708790087FBB3 /* FilialsAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilialsAPI.swift; sourceTree = "<group>"; };
 		409EDB04297708840087FBB3 /* FilialModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilialModel.swift; sourceTree = "<group>"; };
 		409EDB062977088F0087FBB3 /* FilialProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilialProvider.swift; sourceTree = "<group>"; };
@@ -107,6 +119,34 @@
 				40411294297B085200B40C48 /* NewsProvider.swift */,
 			);
 			path = NewsApiSets;
+			sourceTree = "<group>";
+		};
+		4041129A297B391D00B40C48 /* NewsController */ = {
+			isa = PBXGroup;
+			children = (
+				4041129B297B39D600B40C48 /* NewsCell */,
+				40411296297B391900B40C48 /* NewsViewController.swift */,
+				40411297297B391900B40C48 /* NewsViewController.xib */,
+			);
+			path = NewsController;
+			sourceTree = "<group>";
+		};
+		4041129B297B39D600B40C48 /* NewsCell */ = {
+			isa = PBXGroup;
+			children = (
+				4041129C297B39F100B40C48 /* NewsCell.swift */,
+				4041129D297B39F100B40C48 /* NewsCell.xib */,
+			);
+			path = NewsCell;
+			sourceTree = "<group>";
+		};
+		404112A4297B480B00B40C48 /* PresentedController */ = {
+			isa = PBXGroup;
+			children = (
+				404112A0297B480700B40C48 /* PresentedNewsController.swift */,
+				404112A1297B480700B40C48 /* PresentedNewsController.xib */,
+			);
+			path = PresentedController;
 			sourceTree = "<group>";
 		};
 		409EDB01297708600087FBB3 /* FilialApiSets */ = {
@@ -227,6 +267,8 @@
 				40EA831D297701A000510DE4 /* MapController */,
 				40EA83262977020400510DE4 /* StonesController */,
 				40DE9BC42979A3B800FB3ACC /* IngotController */,
+				4041129A297B391D00B40C48 /* NewsController */,
+				404112A4297B480B00B40C48 /* PresentedController */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -330,11 +372,14 @@
 			files = (
 				40DE9BC32979A3B200FB3ACC /* IngotViewController.xib in Resources */,
 				40EA831C2977019C00510DE4 /* MapController.xib in Resources */,
+				40411299297B391900B40C48 /* NewsViewController.xib in Resources */,
 				409EDB132977166D0087FBB3 /* CityCell.xib in Resources */,
 				40EA830E2976FFB800510DE4 /* LaunchScreen.storyboard in Resources */,
 				40DE9BC82979A40900FB3ACC /* StonesViewController.xib in Resources */,
+				4041129F297B39F100B40C48 /* NewsCell.xib in Resources */,
 				40DE9BD92979B9CE00FB3ACC /* IngotCell.xib in Resources */,
 				40DE9BD42979B20400FB3ACC /* StoneCell.xib in Resources */,
+				404112A3297B480700B40C48 /* PresentedNewsController.xib in Resources */,
 				40EA830B2976FFB800510DE4 /* Assets.xcassets in Resources */,
 				409EDB0C297716360087FBB3 /* FilterCell.xib in Resources */,
 				40EA83092976FFB700510DE4 /* Main.storyboard in Resources */,
@@ -417,6 +462,7 @@
 				409EDB122977166D0087FBB3 /* CityCell.swift in Sources */,
 				40DE9BC72979A40900FB3ACC /* StonesViewController.swift in Sources */,
 				40411293297B06E900B40C48 /* NewsModel.swift in Sources */,
+				4041129E297B39F100B40C48 /* NewsCell.swift in Sources */,
 				40DE9BCF2979A6B400FB3ACC /* GemProvider.swift in Sources */,
 				409EDB072977088F0087FBB3 /* FilialProvider.swift in Sources */,
 				40EA83172977014000510DE4 /* TabBarController.swift in Sources */,
@@ -425,6 +471,8 @@
 				40DE9BC22979A3B200FB3ACC /* IngotViewController.swift in Sources */,
 				40EA83042976FFB700510DE4 /* SceneDelegate.swift in Sources */,
 				409EDB0B297716360087FBB3 /* FilterCell.swift in Sources */,
+				404112A2297B480700B40C48 /* PresentedNewsController.swift in Sources */,
+				40411298297B391900B40C48 /* NewsViewController.swift in Sources */,
 				40DE9BCB2979A50700FB3ACC /* GemAPI.swift in Sources */,
 				409EDB05297708840087FBB3 /* FilialModel.swift in Sources */,
 			);

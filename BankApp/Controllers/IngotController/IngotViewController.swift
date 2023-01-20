@@ -24,6 +24,11 @@ class IngotViewController: UIViewController {
         tableViewSettings()
         getData()
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        tableView.reloadData()
+    }
 
     private func tableViewSettings() {
         tableView.delegate = self
@@ -42,6 +47,7 @@ class IngotViewController: UIViewController {
                 if model.goldTen != "0.00" || model.silverTen != "0.00" || model.platinumTen != "0.00" {
                     self.ingotArray.append(model)
                 }
+                self.tableView.reloadData()
             }
             self.activityIndicator.stopAnimating()
         } failure: { error in

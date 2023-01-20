@@ -39,8 +39,9 @@ class TabBarController: UITabBarController {
         let mapController = UINavigationController(rootViewController: MapController(nibName: String(describing: MapController.self), bundle: nil))
         let stonesController = UINavigationController(rootViewController: StonesViewController(nibName: String(describing: StonesViewController.self), bundle: nil))
         let ingotController = UINavigationController(rootViewController: IngotViewController(nibName: String(describing: IngotViewController.self), bundle: nil))
+        let newsController = UINavigationController(rootViewController: NewsViewController(nibName: String(describing: NewsViewController.self), bundle: nil))
         
-        viewControllers = [mapController, stonesController, ingotController]
+        viewControllers = [newsController, mapController, stonesController, ingotController]
         tabBar.tintColor = .systemCyan
         tabBar.unselectedItemTintColor = .lightGray
         tabBar.backgroundColor = .white
@@ -48,9 +49,10 @@ class TabBarController: UITabBarController {
         tabBar.layer.borderWidth = 1
         tabBar.layer.borderColor = UIColor.lightGray.cgColor
         
-        mapController.tabBarItem = UITabBarItem(title: "Map", image: UIImage(systemName: "map.circle.fill"), tag: 0)
-        stonesController.tabBarItem = UITabBarItem(title: "Stones", image: UIImage(systemName: "airtag"), tag: 1)
-        ingotController.tabBarItem = UITabBarItem(title: "Ingots", image: UIImage(systemName: "eye"), tag: 2)
+        newsController.tabBarItem = UITabBarItem(title: "News", image: UIImage(systemName: "newspaper"), tag: 0)
+        mapController.tabBarItem = UITabBarItem(title: "Map", image: UIImage(systemName: "map.circle.fill"), tag: 1)
+        stonesController.tabBarItem = UITabBarItem(title: "Stones", image: UIImage(named: "diamondTabBar"), tag: 2)
+        ingotController.tabBarItem = UITabBarItem(title: "Ingots", image: UIImage(named: "goldTabBar"), tag: 3)
     }
     
 }
