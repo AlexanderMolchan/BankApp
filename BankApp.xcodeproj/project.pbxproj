@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		40411291297B016000B40C48 /* NewsAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40411290297B016000B40C48 /* NewsAPI.swift */; };
+		40411293297B06E900B40C48 /* NewsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40411292297B06E900B40C48 /* NewsModel.swift */; };
+		40411295297B085200B40C48 /* NewsProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40411294297B085200B40C48 /* NewsProvider.swift */; };
 		409EDB03297708790087FBB3 /* FilialsAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 409EDB02297708790087FBB3 /* FilialsAPI.swift */; };
 		409EDB05297708840087FBB3 /* FilialModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 409EDB04297708840087FBB3 /* FilialModel.swift */; };
 		409EDB072977088F0087FBB3 /* FilialProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 409EDB062977088F0087FBB3 /* FilialProvider.swift */; };
@@ -39,6 +42,9 @@
 
 /* Begin PBXFileReference section */
 		36C4C40621253A85840CABAD /* Pods-BankApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BankApp.debug.xcconfig"; path = "Target Support Files/Pods-BankApp/Pods-BankApp.debug.xcconfig"; sourceTree = "<group>"; };
+		40411290297B016000B40C48 /* NewsAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsAPI.swift; sourceTree = "<group>"; };
+		40411292297B06E900B40C48 /* NewsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsModel.swift; sourceTree = "<group>"; };
+		40411294297B085200B40C48 /* NewsProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsProvider.swift; sourceTree = "<group>"; };
 		409EDB02297708790087FBB3 /* FilialsAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilialsAPI.swift; sourceTree = "<group>"; };
 		409EDB04297708840087FBB3 /* FilialModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilialModel.swift; sourceTree = "<group>"; };
 		409EDB062977088F0087FBB3 /* FilialProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilialProvider.swift; sourceTree = "<group>"; };
@@ -91,6 +97,16 @@
 				C65A4F9E90A8DAA46039910E /* Pods-BankApp.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		4041128F297B014B00B40C48 /* NewsApiSets */ = {
+			isa = PBXGroup;
+			children = (
+				40411290297B016000B40C48 /* NewsAPI.swift */,
+				40411292297B06E900B40C48 /* NewsModel.swift */,
+				40411294297B085200B40C48 /* NewsProvider.swift */,
+			);
+			path = NewsApiSets;
 			sourceTree = "<group>";
 		};
 		409EDB01297708600087FBB3 /* FilialApiSets */ = {
@@ -192,6 +208,7 @@
 			children = (
 				409EDB01297708600087FBB3 /* FilialApiSets */,
 				40DE9BC92979A4EC00FB3ACC /* GemApiSets */,
+				4041128F297B014B00B40C48 /* NewsApiSets */,
 				40EA83152977011B00510DE4 /* Controllers */,
 				40EA83032976FFB700510DE4 /* SceneDelegate.swift */,
 				40EA83012976FFB700510DE4 /* AppDelegate.swift */,
@@ -395,12 +412,15 @@
 				40DE9BD82979B9CE00FB3ACC /* IngotCell.swift in Sources */,
 				409EDB1629771CE40087FBB3 /* FilterButtonsEnum.swift in Sources */,
 				40DE9BD32979B20400FB3ACC /* StoneCell.swift in Sources */,
+				40411295297B085200B40C48 /* NewsProvider.swift in Sources */,
 				409EDB03297708790087FBB3 /* FilialsAPI.swift in Sources */,
 				409EDB122977166D0087FBB3 /* CityCell.swift in Sources */,
 				40DE9BC72979A40900FB3ACC /* StonesViewController.swift in Sources */,
+				40411293297B06E900B40C48 /* NewsModel.swift in Sources */,
 				40DE9BCF2979A6B400FB3ACC /* GemProvider.swift in Sources */,
 				409EDB072977088F0087FBB3 /* FilialProvider.swift in Sources */,
 				40EA83172977014000510DE4 /* TabBarController.swift in Sources */,
+				40411291297B016000B40C48 /* NewsAPI.swift in Sources */,
 				40EA83022976FFB700510DE4 /* AppDelegate.swift in Sources */,
 				40DE9BC22979A3B200FB3ACC /* IngotViewController.swift in Sources */,
 				40EA83042976FFB700510DE4 /* SceneDelegate.swift in Sources */,
