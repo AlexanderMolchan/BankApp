@@ -4,12 +4,12 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PresentedNewsController" customModule="BankApp" customModuleProvider="target">
             <connections>
+                <outlet property="newsImage" destination="oYn-if-AQX" id="c3W-da-MHW"/>
                 <outlet property="newsLabel" destination="8A3-20-qyp" id="f1C-1q-hos"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -19,24 +19,48 @@
             <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8A3-20-qyp">
-                    <rect key="frame" x="16" y="64" width="361" height="749"/>
-                    <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="15"/>
-                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="oYn-if-AQX">
+                    <rect key="frame" x="0.0" y="0.0" width="393" height="300"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="300" id="LCP-Fz-P7a"/>
+                    </constraints>
+                </imageView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OTn-L6-kYI">
+                    <rect key="frame" x="50" y="743.33333333333337" width="293" height="34.666666666666629"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="34.670000000000002" id="Pf7-nA-5h9"/>
+                    </constraints>
+                    <state key="normal" title="Button"/>
+                    <buttonConfiguration key="configuration" style="filled" title="Читать полностью">
+                        <fontDescription key="titleFontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="19"/>
+                        <color key="baseBackgroundColor" systemColor="systemCyanColor"/>
+                    </buttonConfiguration>
+                    <connections>
+                        <action selector="openInBrowserTapped:" destination="-1" eventType="touchUpInside" id="VEt-LC-g7y"/>
+                    </connections>
+                </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="19" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8A3-20-qyp">
+                    <rect key="frame" x="10" y="310" width="373" height="19.666666666666686"/>
+                    <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="18"/>
+                    <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <nil key="highlightedColor"/>
                 </label>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
-            <color key="backgroundColor" systemColor="systemCyanColor"/>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="8A3-20-qyp" secondAttribute="trailing" constant="16" id="4zJ-z5-alq"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="8A3-20-qyp" secondAttribute="bottom" constant="5" id="C8y-E0-UgW"/>
-                <constraint firstItem="8A3-20-qyp" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="ChL-EQ-KfB"/>
-                <constraint firstItem="8A3-20-qyp" firstAttribute="centerY" secondItem="fnl-2z-Ty3" secondAttribute="centerY" id="UFr-Cu-Jb9"/>
-                <constraint firstItem="8A3-20-qyp" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="Ves-7S-gvA"/>
-                <constraint firstItem="8A3-20-qyp" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="5" id="ldZ-ZW-zkn"/>
+                <constraint firstItem="oYn-if-AQX" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="0MD-nS-YOQ"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="OTn-L6-kYI" secondAttribute="trailing" constant="50" id="4hp-AW-Qcu"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="OTn-L6-kYI" secondAttribute="bottom" constant="40" id="5p7-N9-XCP"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="8A3-20-qyp" secondAttribute="trailing" constant="10" id="6CX-u5-71o"/>
+                <constraint firstItem="oYn-if-AQX" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="DFd-jI-bA5"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="oYn-if-AQX" secondAttribute="trailing" id="GIe-O7-ujB"/>
+                <constraint firstItem="8A3-20-qyp" firstAttribute="top" secondItem="oYn-if-AQX" secondAttribute="bottom" constant="10" id="Oy7-F0-b2T"/>
+                <constraint firstItem="OTn-L6-kYI" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="50" id="ad8-pR-x4O"/>
+                <constraint firstItem="8A3-20-qyp" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="10" id="flh-PV-anY"/>
+                <constraint firstItem="OTn-L6-kYI" firstAttribute="top" relation="greaterThanOrEqual" secondItem="8A3-20-qyp" secondAttribute="bottom" constant="10" id="g0N-bk-43m"/>
             </constraints>
-            <point key="canvasLocation" x="138" y="20"/>
+            <point key="canvasLocation" x="136.64122137404578" y="19.718309859154932"/>
         </view>
     </objects>
     <resources>

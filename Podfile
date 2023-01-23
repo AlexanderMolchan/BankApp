@@ -9,5 +9,6 @@ target 'BankApp' do
  pod 'GoogleMaps'
  pod 'Google-Maps-iOS-Utils'
  pod 'SDWebImage'
+ pod 'SwiftSoup'
 
 end

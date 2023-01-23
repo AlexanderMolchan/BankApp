@@ -23,8 +23,8 @@
                 <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="BTs-zP-qjc">
                     <rect key="frame" x="16" y="59" width="361" height="32"/>
                     <segments>
-                        <segment title="Серебро"/>
                         <segment title="Золото"/>
+                        <segment title="Серебро"/>
                         <segment title="Платина"/>
                     </segments>
                     <color key="selectedSegmentTintColor" systemColor="systemCyanColor"/>

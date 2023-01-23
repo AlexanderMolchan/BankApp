@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SwiftSoup
 
 class NewsViewController: UIViewController, NewsDelegate {
 
