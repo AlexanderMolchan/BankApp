@@ -23,10 +23,10 @@ class NewsCell: UITableViewCell {
     }
     
     func set(news: NewsModel, delegate: NewsDelegate?) {
-        self.delegate = delegate
-        self.currentNews = news
         newsLabel.text = news.name
         newsImage.sd_setImage(with: URL(string: news.image))
+        self.delegate = delegate
+        self.currentNews = news
     }
     
     @IBAction func fullNewsTapped(_ sender: UIButton) {
