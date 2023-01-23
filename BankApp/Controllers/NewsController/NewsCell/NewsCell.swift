@@ -11,6 +11,8 @@ import SDWebImage
 class NewsCell: UITableViewCell {
     static let id = String(describing: NewsCell.self)
     
+    
+    @IBOutlet weak var timeLabel: UILabel!
     @IBOutlet weak var newsLabel: UILabel!
     @IBOutlet weak var newsImage: UIImageView!
     @IBOutlet weak var fullNewsOutlet: UIButton!
@@ -23,8 +25,10 @@ class NewsCell: UITableViewCell {
     }
     
     func set(news: NewsModel, delegate: NewsDelegate?) {
+        newsImage.isHidden = true
+        timeLabel.text = news.date
         newsLabel.text = news.name
-        newsImage.sd_setImage(with: URL(string: news.image))
+//        newsImage.sd_setImage(with: URL(string: news.image))
         self.delegate = delegate
         self.currentNews = news
     }

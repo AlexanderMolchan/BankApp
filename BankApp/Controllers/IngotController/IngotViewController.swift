@@ -12,7 +12,7 @@ class IngotViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
-    private var ingotType: IngotType = .silver
+    private var ingotType: IngotType = .gold
     private var ingotArray = [IngotModel]() {
         didSet {
             tableView.reloadData()
@@ -57,9 +57,9 @@ class IngotViewController: UIViewController {
     
     @IBAction func segmentChangeValue(_ sender: UISegmentedControl) {
         if sender.selectedSegmentIndex == 0 {
-            ingotType = .silver
-        } else if sender.selectedSegmentIndex == 1 {
             ingotType = .gold
+        } else if sender.selectedSegmentIndex == 1 {
+            ingotType = .silver
         } else {
             ingotType = .platinum
         }
