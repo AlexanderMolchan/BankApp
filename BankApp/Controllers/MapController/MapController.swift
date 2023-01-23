@@ -173,6 +173,7 @@ extension MapController: UICollectionViewDataSource, UICollectionViewDelegate {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if collectionView == filterCollectionView {
+            
             let cell = filterCollectionView.dequeueReusableCell(withReuseIdentifier: FilterCell.id, for: indexPath)
             guard let filterCell = cell as? FilterCell else { return cell }
             filterCell.isSelected = indexPath == filterSelectedIndex
@@ -188,15 +189,19 @@ extension MapController: UICollectionViewDataSource, UICollectionViewDelegate {
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        if collectionView == cityCollectionView {
-//            self.selectedFilter = filterButtons[indexPath.row]
-            self.citySelectedIndex = indexPath
-            self.drawMarkersFor(index: filterSelectedIndex, city: towns[citySelectedIndex.row])
-            self.cityCollectionView.reloadData()
+        if citySelectedIndex.row < towns.count {
+            if collectionView == cityCollectionView {
+//          self.selectedFilter = filterButtons[indexPath.row]
+                self.citySelectedIndex = indexPath
+                self.drawMarkersFor(index: filterSelectedIndex, city: towns[citySelectedIndex.row])
+                self.cityCollectionView.reloadData()
+            } else {
+                self.filterSelectedIndex = indexPath
+                self.drawMarkersFor(index: filterSelectedIndex, city: towns[citySelectedIndex.row])
+                self.filterCollectionView.reloadData()
+            }
         } else {
-            self.filterSelectedIndex = indexPath
-            self.drawMarkersFor(index: filterSelectedIndex, city: towns[citySelectedIndex.row])
-            self.filterCollectionView.reloadData()
+            return
         }
     }
     
@@ -215,7 +220,8 @@ extension MapController: UICollectionViewDelegateFlowLayout {
 // MARK: - Get Data functions extencion
 
 extension MapController {
-    private func drawMarkersFor(index: IndexPath, city: String) {
+    private func drawMarkersFor(index: IndexPath, city: String?) {
+        guard let city else { return }
         mapView.clear()
         clusterManager?.clearItems()
         activityIndicator.startAnimating()
