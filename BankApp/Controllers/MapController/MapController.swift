@@ -104,7 +104,7 @@ class MapController: UIViewController {
             result.forEach { model in
                 guard let longitude = Double(model.longitude),
                       let latitude = Double(model.latitude) else { return }
-                self.createMarker(coordinate: CLLocationCoordinate2D(latitude: latitude, longitude: longitude), position: myPosition)
+                self.createMarker(coordinate: CLLocationCoordinate2D(latitude: latitude, longitude: longitude), position: myPosition, type: .filial)
             }
         } failure: { error in
             self.activityIndicator.stopAnimating()
@@ -115,7 +115,7 @@ class MapController: UIViewController {
             result.forEach { model in
                 guard let longitude = Double(model.longitude),
                       let latitude = Double(model.latitude) else { return }
-                self.createMarker(coordinate: CLLocationCoordinate2D(latitude: latitude, longitude: longitude), position: myPosition)
+                self.createMarker(coordinate: CLLocationCoordinate2D(latitude: latitude, longitude: longitude), position: myPosition, type: .atm)
                 self.activityIndicator.stopAnimating()
                 }
         } failure: { error in
@@ -124,14 +124,27 @@ class MapController: UIViewController {
         }
     }
     
-    private func createMarker(coordinate: CLLocationCoordinate2D, position: CLLocation) {
+    private func createMarker(coordinate: CLLocationCoordinate2D, position: CLLocation, type: MarkerType) {
         let distance = position.distance(from: CLLocation(latitude: coordinate.latitude, longitude: coordinate.longitude))
         if distance < 5000 {
             let marker = GMSMarker(position: CLLocationCoordinate2D(latitude: coordinate.latitude, longitude: coordinate.longitude))
+            switch type {
+                case .atm:
+                    marker.icon = GMSMarker.markerImage(with: UIColor.green)
+                    marker.title = "Банкомат"
+                case .filial:
+                    marker.icon = GMSMarker.markerImage(with: UIColor.yellow)
+                    marker.title = "Отделение"
+            }
             marker.map = mapView
         }
     }
             
+}
+
+enum MarkerType {
+    case atm
+    case filial
 }
 
 // MARK: -
@@ -154,7 +167,7 @@ extension MapController: CLLocationManagerDelegate {
     }
     
     func cameraMove(to location: CLLocationCoordinate2D) {
-            mapView.camera = GMSCameraPosition.camera(withTarget: location, zoom: 8)
+        mapView.camera = GMSCameraPosition.camera(withTarget: location, zoom: 8)
     }
     
 }
@@ -270,7 +283,7 @@ extension MapController {
 //                <#code#>
 //        }
 //
-//        // нужно сделать корояе, обернуть функции запроса в отдельные функции.
+//        // нужно сделать короче, обернуть функции запроса в отдельные функции.
 //    }
 
     private func drawAtm(source: [AtmInfo]) {

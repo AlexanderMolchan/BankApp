@@ -74,6 +74,7 @@ extension NewsViewController: UITableViewDataSource, UITableViewDelegate {
             presentedVc.presentedNews = news
             present(presentedVc, animated: true)
         }
+    
     }
 
     
