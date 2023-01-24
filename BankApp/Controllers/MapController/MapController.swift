@@ -142,11 +142,6 @@ class MapController: UIViewController {
             
 }
 
-enum MarkerType {
-    case atm
-    case filial
-}
-
 // MARK: -
 // MARK: - GoogleMap extension
 

@@ -21,6 +21,7 @@ final class FilialProvider {
             switch result {
                 case .success(let response):
                     guard let atmInfo = try? JSONDecoder().decode([AtmInfo].self, from: response.data) else { return failure("Empty") }
+                    RealmManager<RequestModel>().write(object: RequestModel(date: Date(), statusCode: response.statusCode, type: RequestType.atm.rawValue))
                     success(atmInfo)
                 case .failure(let error):
                     failure(error.localizedDescription)
@@ -33,6 +34,7 @@ final class FilialProvider {
             switch result {
                 case .success(let response):
                     guard let filialInfo = try? JSONDecoder().decode([FilialInfo].self, from: response.data) else { return }
+                    RealmManager<RequestModel>().write(object: RequestModel(date: Date(), statusCode: response.statusCode, type: RequestType.filials.rawValue))
                     success(filialInfo)
                 case .failure(let error):
                     failure(error.localizedDescription)
@@ -59,6 +61,7 @@ final class FilialProvider {
                 case .success(let response):
                     guard let cityList = try? JSONDecoder().decode([AtmCity].self, from: response.data)
                     else { return }
+                    RealmManager<RequestModel>().write(object: RequestModel(date: Date(), statusCode: response.statusCode, type: RequestType.towns.rawValue))
                     success(cityList)
                 case .failure(let error):
                     failure(error.localizedDescription)
