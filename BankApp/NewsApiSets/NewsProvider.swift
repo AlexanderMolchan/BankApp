@@ -16,6 +16,7 @@ final class NewsProvider {
             switch result {
                 case .success(let response):
                     guard let news = try? JSONDecoder().decode([NewsModel].self, from: response.data) else { return }
+                    RealmManager<RequestModel>().write(object: RequestModel(date: Date(), statusCode: response.statusCode, type: RequestType.news.rawValue))
                     success(news)
                 case .failure(let error):
                     print(error.localizedDescription)

@@ -42,6 +42,15 @@ class IngotCell: UITableViewCell {
                 twentyCost = model.platinumTwenty
                 fiftyCost = model.platinumFifty
         }
+        if tenCost == "0.00" {
+            tenCost = "Нет в наличиии"
+        }
+        if twentyCost == "0.00" {
+            twentyCost = "Нет в наличиии"
+        }
+        if fiftyCost == "0.00" {
+            fiftyCost = "Нет в наличиии"
+        }
         typeLabel.text = type.rawValue
         tenLabel.text = "Цена за слиток 10г. \(tenCost)"
         twentyLabel.text = "Цена за слиток 20г. \(twentyCost)"

@@ -40,8 +40,10 @@ class TabBarController: UITabBarController {
         let stonesController = UINavigationController(rootViewController: StonesViewController(nibName: String(describing: StonesViewController.self), bundle: nil))
         let ingotController = UINavigationController(rootViewController: IngotViewController(nibName: String(describing: IngotViewController.self), bundle: nil))
         let newsController = UINavigationController(rootViewController: NewsViewController(nibName: String(describing: NewsViewController.self), bundle: nil))
+        let historyController = UINavigationController(rootViewController: HistoryController(nibName: String(describing: HistoryController.self), bundle: nil))
         
-        viewControllers = [newsController, mapController, stonesController, ingotController]
+        viewControllers = [newsController, mapController, stonesController, ingotController, historyController]
+        
         tabBar.tintColor = .systemCyan
         tabBar.unselectedItemTintColor = .lightGray
         tabBar.backgroundColor = .white
@@ -53,6 +55,7 @@ class TabBarController: UITabBarController {
         mapController.tabBarItem = UITabBarItem(title: "Map", image: UIImage(systemName: "map.circle.fill"), tag: 1)
         stonesController.tabBarItem = UITabBarItem(title: "Stones", image: UIImage(named: "diamondTabBar"), tag: 2)
         ingotController.tabBarItem = UITabBarItem(title: "Ingots", image: UIImage(named: "goldTabBar"), tag: 3)
+        historyController.tabBarItem = UITabBarItem(title: "History", image: UIImage(systemName: "books.vertical"), tag: 4)
     }
     
 }

@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4034750E29803B4600A5F18A /* RealmManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4034750D29803B4600A5F18A /* RealmManager.swift */; };
+		4034751129803B6800A5F18A /* Enums.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4034751029803B6800A5F18A /* Enums.swift */; };
+		4034751429803C3A00A5F18A /* HistoryController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4034751229803C3A00A5F18A /* HistoryController.swift */; };
+		4034751529803C3A00A5F18A /* HistoryController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4034751329803C3A00A5F18A /* HistoryController.xib */; };
+		4034751A29803D1A00A5F18A /* HistoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4034751829803D1A00A5F18A /* HistoryCell.swift */; };
+		4034751B29803D1A00A5F18A /* HistoryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4034751929803D1A00A5F18A /* HistoryCell.xib */; };
+		4034751D29803F5B00A5F18A /* RequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4034751C29803F5B00A5F18A /* RequestModel.swift */; };
 		40411291297B016000B40C48 /* NewsAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40411290297B016000B40C48 /* NewsAPI.swift */; };
 		40411293297B06E900B40C48 /* NewsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40411292297B06E900B40C48 /* NewsModel.swift */; };
 		40411295297B085200B40C48 /* NewsProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40411294297B085200B40C48 /* NewsProvider.swift */; };
@@ -23,7 +30,6 @@
 		409EDB0C297716360087FBB3 /* FilterCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 409EDB0A297716360087FBB3 /* FilterCell.xib */; };
 		409EDB122977166D0087FBB3 /* CityCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 409EDB102977166D0087FBB3 /* CityCell.swift */; };
 		409EDB132977166D0087FBB3 /* CityCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 409EDB112977166D0087FBB3 /* CityCell.xib */; };
-		409EDB1629771CE40087FBB3 /* FilterButtonsEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 409EDB1529771CE40087FBB3 /* FilterButtonsEnum.swift */; };
 		40DE9BC22979A3B200FB3ACC /* IngotViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40DE9BC02979A3B200FB3ACC /* IngotViewController.swift */; };
 		40DE9BC32979A3B200FB3ACC /* IngotViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 40DE9BC12979A3B200FB3ACC /* IngotViewController.xib */; };
 		40DE9BC72979A40900FB3ACC /* StonesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40DE9BC52979A40900FB3ACC /* StonesViewController.swift */; };
@@ -48,6 +54,13 @@
 
 /* Begin PBXFileReference section */
 		36C4C40621253A85840CABAD /* Pods-BankApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BankApp.debug.xcconfig"; path = "Target Support Files/Pods-BankApp/Pods-BankApp.debug.xcconfig"; sourceTree = "<group>"; };
+		4034750D29803B4600A5F18A /* RealmManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmManager.swift; sourceTree = "<group>"; };
+		4034751029803B6800A5F18A /* Enums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enums.swift; sourceTree = "<group>"; };
+		4034751229803C3A00A5F18A /* HistoryController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryController.swift; sourceTree = "<group>"; };
+		4034751329803C3A00A5F18A /* HistoryController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HistoryController.xib; sourceTree = "<group>"; };
+		4034751829803D1A00A5F18A /* HistoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryCell.swift; sourceTree = "<group>"; };
+		4034751929803D1A00A5F18A /* HistoryCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HistoryCell.xib; sourceTree = "<group>"; };
+		4034751C29803F5B00A5F18A /* RequestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestModel.swift; sourceTree = "<group>"; };
 		40411290297B016000B40C48 /* NewsAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsAPI.swift; sourceTree = "<group>"; };
 		40411292297B06E900B40C48 /* NewsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsModel.swift; sourceTree = "<group>"; };
 		40411294297B085200B40C48 /* NewsProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsProvider.swift; sourceTree = "<group>"; };
@@ -64,7 +77,6 @@
 		409EDB0A297716360087FBB3 /* FilterCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FilterCell.xib; sourceTree = "<group>"; };
 		409EDB102977166D0087FBB3 /* CityCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityCell.swift; sourceTree = "<group>"; };
 		409EDB112977166D0087FBB3 /* CityCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CityCell.xib; sourceTree = "<group>"; };
-		409EDB1529771CE40087FBB3 /* FilterButtonsEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterButtonsEnum.swift; sourceTree = "<group>"; };
 		40DE9BC02979A3B200FB3ACC /* IngotViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngotViewController.swift; sourceTree = "<group>"; };
 		40DE9BC12979A3B200FB3ACC /* IngotViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = IngotViewController.xib; sourceTree = "<group>"; };
 		40DE9BC52979A40900FB3ACC /* StonesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StonesViewController.swift; sourceTree = "<group>"; };
@@ -109,6 +121,67 @@
 				C65A4F9E90A8DAA46039910E /* Pods-BankApp.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		4034750929803B0500A5F18A /* Other */ = {
+			isa = PBXGroup;
+			children = (
+				4034750F29803B5900A5F18A /* Enums */,
+				4034750A29803B1900A5F18A /* RealmSwift */,
+			);
+			path = Other;
+			sourceTree = "<group>";
+		};
+		4034750A29803B1900A5F18A /* RealmSwift */ = {
+			isa = PBXGroup;
+			children = (
+				4034750B29803B2500A5F18A /* RealmManager */,
+				4034750C29803B3000A5F18A /* RealmModels */,
+			);
+			path = RealmSwift;
+			sourceTree = "<group>";
+		};
+		4034750B29803B2500A5F18A /* RealmManager */ = {
+			isa = PBXGroup;
+			children = (
+				4034750D29803B4600A5F18A /* RealmManager.swift */,
+			);
+			path = RealmManager;
+			sourceTree = "<group>";
+		};
+		4034750C29803B3000A5F18A /* RealmModels */ = {
+			isa = PBXGroup;
+			children = (
+				4034751C29803F5B00A5F18A /* RequestModel.swift */,
+			);
+			path = RealmModels;
+			sourceTree = "<group>";
+		};
+		4034750F29803B5900A5F18A /* Enums */ = {
+			isa = PBXGroup;
+			children = (
+				4034751029803B6800A5F18A /* Enums.swift */,
+			);
+			path = Enums;
+			sourceTree = "<group>";
+		};
+		4034751629803C3F00A5F18A /* HistoryController */ = {
+			isa = PBXGroup;
+			children = (
+				4034751729803D0300A5F18A /* HistoryCell */,
+				4034751229803C3A00A5F18A /* HistoryController.swift */,
+				4034751329803C3A00A5F18A /* HistoryController.xib */,
+			);
+			path = HistoryController;
+			sourceTree = "<group>";
+		};
+		4034751729803D0300A5F18A /* HistoryCell */ = {
+			isa = PBXGroup;
+			children = (
+				4034751829803D1A00A5F18A /* HistoryCell.swift */,
+				4034751929803D1A00A5F18A /* HistoryCell.xib */,
+			);
+			path = HistoryCell;
 			sourceTree = "<group>";
 		};
 		4041128F297B014B00B40C48 /* NewsApiSets */ = {
@@ -173,7 +246,6 @@
 			children = (
 				409EDB09297716360087FBB3 /* FilterCell.swift */,
 				409EDB0A297716360087FBB3 /* FilterCell.xib */,
-				409EDB1529771CE40087FBB3 /* FilterButtonsEnum.swift */,
 			);
 			path = FilterCell;
 			sourceTree = "<group>";
@@ -246,6 +318,7 @@
 		40EA83002976FFB700510DE4 /* BankApp */ = {
 			isa = PBXGroup;
 			children = (
+				4034750929803B0500A5F18A /* Other */,
 				409EDB01297708600087FBB3 /* FilialApiSets */,
 				40DE9BC92979A4EC00FB3ACC /* GemApiSets */,
 				4041128F297B014B00B40C48 /* NewsApiSets */,
@@ -269,6 +342,7 @@
 				40DE9BC42979A3B800FB3ACC /* IngotController */,
 				4041129A297B391D00B40C48 /* NewsController */,
 				404112A4297B480B00B40C48 /* PresentedController */,
+				4034751629803C3F00A5F18A /* HistoryController */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -372,6 +446,7 @@
 			files = (
 				40DE9BC32979A3B200FB3ACC /* IngotViewController.xib in Resources */,
 				40EA831C2977019C00510DE4 /* MapController.xib in Resources */,
+				4034751529803C3A00A5F18A /* HistoryController.xib in Resources */,
 				40411299297B391900B40C48 /* NewsViewController.xib in Resources */,
 				409EDB132977166D0087FBB3 /* CityCell.xib in Resources */,
 				40EA830E2976FFB800510DE4 /* LaunchScreen.storyboard in Resources */,
@@ -379,6 +454,7 @@
 				4041129F297B39F100B40C48 /* NewsCell.xib in Resources */,
 				40DE9BD92979B9CE00FB3ACC /* IngotCell.xib in Resources */,
 				40DE9BD42979B20400FB3ACC /* StoneCell.xib in Resources */,
+				4034751B29803D1A00A5F18A /* HistoryCell.xib in Resources */,
 				404112A3297B480700B40C48 /* PresentedNewsController.xib in Resources */,
 				40EA830B2976FFB800510DE4 /* Assets.xcassets in Resources */,
 				409EDB0C297716360087FBB3 /* FilterCell.xib in Resources */,
@@ -454,9 +530,10 @@
 			files = (
 				40EA831B2977019C00510DE4 /* MapController.swift in Sources */,
 				40DE9BCD2979A69E00FB3ACC /* GemModels.swift in Sources */,
+				4034751129803B6800A5F18A /* Enums.swift in Sources */,
 				40DE9BD82979B9CE00FB3ACC /* IngotCell.swift in Sources */,
-				409EDB1629771CE40087FBB3 /* FilterButtonsEnum.swift in Sources */,
 				40DE9BD32979B20400FB3ACC /* StoneCell.swift in Sources */,
+				4034751D29803F5B00A5F18A /* RequestModel.swift in Sources */,
 				40411295297B085200B40C48 /* NewsProvider.swift in Sources */,
 				409EDB03297708790087FBB3 /* FilialsAPI.swift in Sources */,
 				409EDB122977166D0087FBB3 /* CityCell.swift in Sources */,
@@ -468,9 +545,12 @@
 				40EA83172977014000510DE4 /* TabBarController.swift in Sources */,
 				40411291297B016000B40C48 /* NewsAPI.swift in Sources */,
 				40EA83022976FFB700510DE4 /* AppDelegate.swift in Sources */,
+				4034751A29803D1A00A5F18A /* HistoryCell.swift in Sources */,
 				40DE9BC22979A3B200FB3ACC /* IngotViewController.swift in Sources */,
+				4034750E29803B4600A5F18A /* RealmManager.swift in Sources */,
 				40EA83042976FFB700510DE4 /* SceneDelegate.swift in Sources */,
 				409EDB0B297716360087FBB3 /* FilterCell.swift in Sources */,
+				4034751429803C3A00A5F18A /* HistoryController.swift in Sources */,
 				404112A2297B480700B40C48 /* PresentedNewsController.swift in Sources */,
 				40411298297B391900B40C48 /* NewsViewController.swift in Sources */,
 				40DE9BCB2979A50700FB3ACC /* GemAPI.swift in Sources */,

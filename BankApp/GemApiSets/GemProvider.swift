@@ -16,6 +16,7 @@ final class GemProvider {
             switch result {
                 case .success(let response):
                     guard let stonesInfo = try? JSONDecoder().decode([StoneModel].self, from: response.data) else { return }
+                    RealmManager<RequestModel>().write(object: RequestModel(date: Date(), statusCode: response.statusCode, type: RequestType.gems.rawValue))
                     success(stonesInfo)
                 case .failure(let error):
                     failure(error.localizedDescription)
@@ -28,6 +29,7 @@ final class GemProvider {
             switch result {
                 case .success(let response):
                     guard let ingotsInfo = try? JSONDecoder().decode([IngotModel].self, from: response.data) else { return }
+                    RealmManager<RequestModel>().write(object: RequestModel(date: Date(), statusCode: response.statusCode, type: RequestType.ingots.rawValue))
                     succes(ingotsInfo)
                 case .failure(let error):
                     print(error.localizedDescription)
