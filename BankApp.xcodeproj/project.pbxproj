@@ -23,6 +23,7 @@
 		4041129F297B39F100B40C48 /* NewsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4041129D297B39F100B40C48 /* NewsCell.xib */; };
 		404112A2297B480700B40C48 /* PresentedNewsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 404112A0297B480700B40C48 /* PresentedNewsController.swift */; };
 		404112A3297B480700B40C48 /* PresentedNewsController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 404112A1297B480700B40C48 /* PresentedNewsController.xib */; };
+		4050C2A22980979D007B05BD /* UserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4050C2A12980979D007B05BD /* UserDefaults.swift */; };
 		409EDB03297708790087FBB3 /* FilialsAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 409EDB02297708790087FBB3 /* FilialsAPI.swift */; };
 		409EDB05297708840087FBB3 /* FilialModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 409EDB04297708840087FBB3 /* FilialModel.swift */; };
 		409EDB072977088F0087FBB3 /* FilialProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 409EDB062977088F0087FBB3 /* FilialProvider.swift */; };
@@ -70,6 +71,7 @@
 		4041129D297B39F100B40C48 /* NewsCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NewsCell.xib; sourceTree = "<group>"; };
 		404112A0297B480700B40C48 /* PresentedNewsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresentedNewsController.swift; sourceTree = "<group>"; };
 		404112A1297B480700B40C48 /* PresentedNewsController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PresentedNewsController.xib; sourceTree = "<group>"; };
+		4050C2A12980979D007B05BD /* UserDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaults.swift; sourceTree = "<group>"; };
 		409EDB02297708790087FBB3 /* FilialsAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilialsAPI.swift; sourceTree = "<group>"; };
 		409EDB04297708840087FBB3 /* FilialModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilialModel.swift; sourceTree = "<group>"; };
 		409EDB062977088F0087FBB3 /* FilialProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilialProvider.swift; sourceTree = "<group>"; };
@@ -126,6 +128,7 @@
 		4034750929803B0500A5F18A /* Other */ = {
 			isa = PBXGroup;
 			children = (
+				4050C2A02980978C007B05BD /* UserDefaults */,
 				4034750F29803B5900A5F18A /* Enums */,
 				4034750A29803B1900A5F18A /* RealmSwift */,
 			);
@@ -220,6 +223,24 @@
 				404112A1297B480700B40C48 /* PresentedNewsController.xib */,
 			);
 			path = PresentedController;
+			sourceTree = "<group>";
+		};
+		4050C2A02980978C007B05BD /* UserDefaults */ = {
+			isa = PBXGroup;
+			children = (
+				4050C2A12980979D007B05BD /* UserDefaults.swift */,
+			);
+			path = UserDefaults;
+			sourceTree = "<group>";
+		};
+		4050C2A52980A7F8007B05BD /* API */ = {
+			isa = PBXGroup;
+			children = (
+				409EDB01297708600087FBB3 /* FilialApiSets */,
+				40DE9BC92979A4EC00FB3ACC /* GemApiSets */,
+				4041128F297B014B00B40C48 /* NewsApiSets */,
+			);
+			path = API;
 			sourceTree = "<group>";
 		};
 		409EDB01297708600087FBB3 /* FilialApiSets */ = {
@@ -318,16 +339,14 @@
 		40EA83002976FFB700510DE4 /* BankApp */ = {
 			isa = PBXGroup;
 			children = (
-				4034750929803B0500A5F18A /* Other */,
-				409EDB01297708600087FBB3 /* FilialApiSets */,
-				40DE9BC92979A4EC00FB3ACC /* GemApiSets */,
-				4041128F297B014B00B40C48 /* NewsApiSets */,
+				4050C2A52980A7F8007B05BD /* API */,
 				40EA83152977011B00510DE4 /* Controllers */,
-				40EA83032976FFB700510DE4 /* SceneDelegate.swift */,
-				40EA83012976FFB700510DE4 /* AppDelegate.swift */,
+				4034750929803B0500A5F18A /* Other */,
 				40EA83072976FFB700510DE4 /* Main.storyboard */,
 				40EA830C2976FFB800510DE4 /* LaunchScreen.storyboard */,
 				40EA830A2976FFB800510DE4 /* Assets.xcassets */,
+				40EA83012976FFB700510DE4 /* AppDelegate.swift */,
+				40EA83032976FFB700510DE4 /* SceneDelegate.swift */,
 				40EA830F2976FFB800510DE4 /* Info.plist */,
 			);
 			path = BankApp;
@@ -540,6 +559,7 @@
 				40DE9BC72979A40900FB3ACC /* StonesViewController.swift in Sources */,
 				40411293297B06E900B40C48 /* NewsModel.swift in Sources */,
 				4041129E297B39F100B40C48 /* NewsCell.swift in Sources */,
+				4050C2A22980979D007B05BD /* UserDefaults.swift in Sources */,
 				40DE9BCF2979A6B400FB3ACC /* GemProvider.swift in Sources */,
 				409EDB072977088F0087FBB3 /* FilialProvider.swift in Sources */,
 				40EA83172977014000510DE4 /* TabBarController.swift in Sources */,

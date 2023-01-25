@@ -11,6 +11,7 @@ class IngotViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+    @IBOutlet weak var emptyContainerView: UIView!
     
     private var ingotType: IngotType = .gold
     private var ingotArray = [IngotModel]() {
@@ -18,7 +19,7 @@ class IngotViewController: UIViewController {
             tableView.reloadData()
         }
     }
-    
+        
     override func viewDidLoad() {
         super.viewDidLoad()
         tableViewSettings()
@@ -27,13 +28,17 @@ class IngotViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        tableView.reloadData()
+        getData()
     }
 
     private func tableViewSettings() {
         tableView.delegate = self
         tableView.dataSource = self
         tableView.register(UINib(nibName: IngotCell.id, bundle: nil), forCellReuseIdentifier: IngotCell.id)
+        
+        emptyContainerView.alpha = 0.8
+        emptyContainerView.isHidden = true
+        
         navigationController?.navigationBar.prefersLargeTitles = true
         navigationController?.navigationBar.tintColor = .systemCyan
         navigationItem.title = "Драгоценные металлы"
@@ -52,6 +57,13 @@ class IngotViewController: UIViewController {
             self.activityIndicator.stopAnimating()
         } failure: { error in
             self.activityIndicator.stopAnimating()
+        }
+        if ingotArray.isEmpty {
+            emptyContainerView.isHidden = false
+            tableView.isHidden = true
+        } else {
+            emptyContainerView.isHidden = true
+            tableView.isHidden = false
         }
     }
     
