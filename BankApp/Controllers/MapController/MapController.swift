@@ -18,19 +18,18 @@ class MapController: UIViewController {
     
     private var locationManager = CLLocationManager()
     private var clusterManager: GMUClusterManager?
-    private var markers: [GMSMarker] = []
-    private var towns = [String]()
     private var filterButtons = FilterButtons.allCases
     private var citySelectedIndex = IndexPath(row: 0, section: 0)
     private var filterSelectedIndex = IndexPath(row: 0, section: 0)
     private var selectedFilter = FilterButtons.all
-    
+    private var towns = DefaultsManager.savedTownArray
+
     override func viewDidLoad() {
         super.viewDidLoad()
         configurateMapView()
         clusterSettings()
         collectionViewsSettings()
-        getCityData()
+        firstStart()
     }
     
     private func configurateMapView() {
@@ -65,29 +64,10 @@ class MapController: UIViewController {
         filterCollectionView.register(UINib(nibName: FilterCell.id, bundle: nil), forCellWithReuseIdentifier: FilterCell.id)
     }
     
-    private func getCityData() {
-        self.activityIndicator.startAnimating()
-        FilialProvider().getAtmCityList { [weak self] result in
-            guard let self else { return }
-            result.forEach { model in
-                if !self.towns.contains(model.city), model.cityType == "г." {
-                    self.towns.append(model.city)
-                }
-            }
-            FilialProvider().getFilialCityList { [weak self] result in
-                guard let self else { return }
-                result.forEach { model in
-                    if !self.towns.contains(model.city), model.cityType == "г." {
-                        self.towns.append(model.city)
-                    }
-                }
-                self.cityCollectionView.reloadData()
-                self.activityIndicator.stopAnimating()
-            } failure: { error in
-                print("We have \(error)")
-            }
-        } failure: { error in
-            print("We have \(error)")
+    private func firstStart() {
+        if DefaultsManager.firstStart {
+            getCityData()
+            DefaultsManager.firstStart = false
         }
     }
     
@@ -181,7 +161,6 @@ extension MapController: UICollectionViewDataSource, UICollectionViewDelegate {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if collectionView == filterCollectionView {
-            
             let cell = filterCollectionView.dequeueReusableCell(withReuseIdentifier: FilterCell.id, for: indexPath)
             guard let filterCell = cell as? FilterCell else { return cell }
             filterCell.isSelected = indexPath == filterSelectedIndex
@@ -228,6 +207,35 @@ extension MapController: UICollectionViewDelegateFlowLayout {
 // MARK: - Get Data functions extencion
 
 extension MapController {
+    private func getCityData() {
+        self.activityIndicator.startAnimating()
+        FilialProvider().getAtmCityList { [weak self] result in
+            guard let self else { return }
+            var filteredTowns = [String]()
+            result.forEach { model in
+                if !filteredTowns.contains(model.city), model.cityType == "г." {
+                    filteredTowns.append(model.city)
+                }
+            }
+            FilialProvider().getFilialCityList { [weak self] result in
+                guard let self else { return }
+                result.forEach { model in
+                    if !filteredTowns.contains(model.city), model.cityType == "г." {
+                        filteredTowns.append(model.city)
+                    }
+                }
+                DefaultsManager.savedTownArray = filteredTowns
+                self.towns = filteredTowns
+                self.cityCollectionView.reloadData()
+                self.activityIndicator.stopAnimating()
+            } failure: { error in
+                print("We have \(error)")
+            }
+        } failure: { error in
+            print("We have \(error)")
+        }
+    }
+    
     private func drawMarkersFor(index: IndexPath, city: String?) {
         guard let city else { return }
         mapView.clear()
@@ -320,4 +328,5 @@ extension MapController {
         alert.addAction(okBtn)
         present(alert, animated: true)
     }
+    
 }

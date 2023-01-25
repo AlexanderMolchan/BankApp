@@ -35,7 +35,7 @@ class HistoryController: UIViewController {
         navigationController?.navigationBar.tintColor = .systemCyan
         navigationItem.title = "История запросов"
         navigationController?.navigationBar.largeTitleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.systemCyan, NSAttributedString.Key.font: UIFont(name: "Marker Felt", size: 30) as Any]
-        deleteAllButton = UIBarButtonItem(image: UIImage(systemName: "delete.left.fill"), style: .done, target: self, action: #selector(deleteAll))
+        deleteAllButton = UIBarButtonItem(image: UIImage(systemName: "trash.circle"), style: .done, target: self, action: #selector(deleteAll))
         navigationItem.rightBarButtonItem = deleteAllButton
     }
     
@@ -60,7 +60,7 @@ class HistoryController: UIViewController {
     private func deleteAllAlert() {
         let alert = UIAlertController(title: "Удалить всё?", message: "Вы уверены, что хотите удалить всю историю запросов?", preferredStyle: .alert)
         let cancelBtn = UIAlertAction(title: "Отмена", style: .cancel)
-        let okBtn = UIAlertAction(title: "Подтвердить", style: .default) { _ in
+        let okBtn = UIAlertAction(title: "Подтвердить", style: .destructive) { _ in
             self.historyArray.forEach() { model in
                 RealmManager<RequestModel>().delete(object: model)
                 self.updateArray()

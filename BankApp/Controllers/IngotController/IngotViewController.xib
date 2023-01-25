@@ -3,6 +3,7 @@
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -11,6 +12,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="IngotViewController" customModule="BankApp" customModuleProvider="target">
             <connections>
                 <outlet property="activityIndicator" destination="1Yx-RO-aXw" id="KVq-nt-lrE"/>
+                <outlet property="emptyContainerView" destination="XiY-LJ-kqQ" id="O1z-gT-gI3"/>
                 <outlet property="tableView" destination="4dA-Kw-uVI" id="gIw-w2-SXk"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -40,24 +42,66 @@
                     <rect key="frame" x="178" y="407.66666666666669" width="37" height="37"/>
                     <color key="color" red="0.3587502736" green="0.96151972600000002" blue="0.74244056479999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                 </activityIndicatorView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XiY-LJ-kqQ">
+                    <rect key="frame" x="0.0" y="0.0" width="393" height="818"/>
+                    <subviews>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Rnt-ls-TEH">
+                            <rect key="frame" x="96.666666666666686" y="307.33333333333331" width="200" height="202"/>
+                            <color key="tintColor" systemColor="systemCyanColor"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="200" id="cIh-Pt-Zsc"/>
+                                <constraint firstAttribute="width" constant="200" id="xNZ-wm-d0S"/>
+                            </constraints>
+                            <imageReference key="image" image="lock.icloud.fill" catalog="system" symbolScale="large"/>
+                        </imageView>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ошибка при выполнении запроса. Повторите позже" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KJp-gs-9fC">
+                            <rect key="frame" x="16" y="529" width="361" height="50"/>
+                            <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="23"/>
+                            <color key="textColor" systemColor="systemCyanColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="We are sorry   :(" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZDd-FG-ewr">
+                            <rect key="frame" x="16" y="252" width="361" height="37"/>
+                            <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="34"/>
+                            <color key="textColor" systemColor="systemCyanColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <constraints>
+                        <constraint firstItem="KJp-gs-9fC" firstAttribute="top" secondItem="Rnt-ls-TEH" secondAttribute="bottom" constant="20" id="260-gA-ynL"/>
+                        <constraint firstItem="ZDd-FG-ewr" firstAttribute="leading" secondItem="XiY-LJ-kqQ" secondAttribute="leading" constant="16" id="3fu-V7-8SJ"/>
+                        <constraint firstItem="Rnt-ls-TEH" firstAttribute="centerY" secondItem="XiY-LJ-kqQ" secondAttribute="centerY" id="Jyr-Ss-1bh"/>
+                        <constraint firstItem="Rnt-ls-TEH" firstAttribute="centerX" secondItem="XiY-LJ-kqQ" secondAttribute="centerX" id="YCv-yl-L5x"/>
+                        <constraint firstAttribute="trailing" secondItem="ZDd-FG-ewr" secondAttribute="trailing" constant="16" id="Yrm-i9-RgH"/>
+                        <constraint firstItem="KJp-gs-9fC" firstAttribute="leading" secondItem="XiY-LJ-kqQ" secondAttribute="leading" constant="16" id="f3T-1R-MWc"/>
+                        <constraint firstAttribute="trailing" secondItem="KJp-gs-9fC" secondAttribute="trailing" constant="16" id="hyB-Tb-7FH"/>
+                        <constraint firstItem="Rnt-ls-TEH" firstAttribute="top" secondItem="ZDd-FG-ewr" secondAttribute="bottom" constant="20" id="nwj-MF-WUj"/>
+                    </constraints>
+                </view>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="BTs-zP-qjc" secondAttribute="trailing" constant="16" id="3dq-p9-8at"/>
+                <constraint firstItem="XiY-LJ-kqQ" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="Cuk-XB-bcG"/>
                 <constraint firstItem="4dA-Kw-uVI" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="EdI-f0-bk7"/>
                 <constraint firstItem="BTs-zP-qjc" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="Hf0-Hx-wgP"/>
                 <constraint firstItem="4dA-Kw-uVI" firstAttribute="top" secondItem="BTs-zP-qjc" secondAttribute="bottom" id="OWG-GP-Bvo"/>
                 <constraint firstItem="BTs-zP-qjc" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="UEH-kK-yfx"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="4dA-Kw-uVI" secondAttribute="trailing" id="aiR-uB-NxU"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="XiY-LJ-kqQ" secondAttribute="trailing" id="ezp-UH-aYD"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="XiY-LJ-kqQ" secondAttribute="bottom" id="fR1-je-RLB"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="4dA-Kw-uVI" secondAttribute="bottom" id="tEW-BY-n64"/>
                 <constraint firstItem="1Yx-RO-aXw" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="tmx-FE-vGl"/>
+                <constraint firstItem="XiY-LJ-kqQ" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="vkd-gc-3tq"/>
                 <constraint firstItem="1Yx-RO-aXw" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="xw8-i0-Oc1"/>
             </constraints>
-            <point key="canvasLocation" x="117" y="20"/>
+            <point key="canvasLocation" x="116.79389312977099" y="19.718309859154932"/>
         </view>
     </objects>
     <resources>
+        <image name="lock.icloud.fill" catalog="system" width="128" height="90"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
