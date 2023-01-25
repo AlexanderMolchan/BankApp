@@ -12,12 +12,7 @@ class HistoryController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     
     private var deleteAllButton = UIBarButtonItem()
-    
-    private var historyArray = RealmManager<RequestModel>().read() {
-        didSet {
-//            tableView.reloadData()
-        }
-    }
+    private var historyArray = RealmManager<RequestModel>().read()
     
     override func viewDidLoad() {
         super.viewDidLoad()

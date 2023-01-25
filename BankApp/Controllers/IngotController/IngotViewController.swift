@@ -12,13 +12,10 @@ class IngotViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     @IBOutlet weak var emptyContainerView: UIView!
+    @IBOutlet weak var segmentOutlet: UISegmentedControl!
     
     private var ingotType: IngotType = .gold
-    private var ingotArray = [IngotModel]() {
-        didSet {
-            tableView.reloadData()
-        }
-    }
+    private var ingotArray = [IngotModel]()
         
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,6 +35,7 @@ class IngotViewController: UIViewController {
         
         emptyContainerView.alpha = 0.8
         emptyContainerView.isHidden = true
+        segmentOutlet.isHidden = true
         
         navigationController?.navigationBar.prefersLargeTitles = true
         navigationController?.navigationBar.tintColor = .systemCyan
@@ -53,17 +51,24 @@ class IngotViewController: UIViewController {
                     self.ingotArray.append(model)
                 }
                 self.tableView.reloadData()
+                self.emptyImageSet()
             }
             self.activityIndicator.stopAnimating()
         } failure: { error in
             self.activityIndicator.stopAnimating()
         }
+    }
+    
+    private func emptyImageSet() {
+        tableView.reloadData()
         if ingotArray.isEmpty {
             emptyContainerView.isHidden = false
             tableView.isHidden = true
+            segmentOutlet.isHidden = true
         } else {
             emptyContainerView.isHidden = true
             tableView.isHidden = false
+            segmentOutlet.isHidden = false
         }
     }
     

@@ -13,6 +13,7 @@
             <connections>
                 <outlet property="activityIndicator" destination="1Yx-RO-aXw" id="KVq-nt-lrE"/>
                 <outlet property="emptyContainerView" destination="XiY-LJ-kqQ" id="O1z-gT-gI3"/>
+                <outlet property="segmentOutlet" destination="BTs-zP-qjc" id="X1B-YU-ITb"/>
                 <outlet property="tableView" destination="4dA-Kw-uVI" id="gIw-w2-SXk"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
