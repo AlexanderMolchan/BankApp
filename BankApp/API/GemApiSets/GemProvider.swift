@@ -29,6 +29,9 @@ final class GemProvider {
             switch result {
                 case .success(let response):
                     guard let ingotsInfo = try? JSONDecoder().decode([IngotModel].self, from: response.data) else { return }
+                    if ingotsInfo.count == 0 {
+                        failure("Empty response")
+                    }
                     RealmManager<RequestModel>().write(object: RequestModel(date: Date(), statusCode: response.statusCode, type: RequestType.ingots.rawValue))
                     succes(ingotsInfo)
                 case .failure(let error):

@@ -55,6 +55,7 @@ class IngotViewController: UIViewController {
             }
             self.activityIndicator.stopAnimating()
         } failure: { error in
+            self.emptyImageSet()
             self.activityIndicator.stopAnimating()
         }
     }
