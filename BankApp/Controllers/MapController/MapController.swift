@@ -15,6 +15,8 @@ class MapController: UIViewController {
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     @IBOutlet weak var cityCollectionView: UICollectionView!
     @IBOutlet weak var filterCollectionView: UICollectionView!
+    @IBOutlet weak var emptyView: EmptyView!
+    @IBOutlet weak var createRadiusButtonOutlet: UIButton!
     
     private var locationManager = CLLocationManager()
     private var clusterManager: GMUClusterManager?
@@ -23,6 +25,7 @@ class MapController: UIViewController {
     private var filterSelectedIndex = IndexPath(row: 0, section: 0)
     private var selectedFilter = FilterButtons.all
     private var towns = DefaultsManager.savedTownArray
+    private var emptyViewHidden = true
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,6 +33,12 @@ class MapController: UIViewController {
         clusterSettings()
         collectionViewsSettings()
         firstStart()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        emptyViewHidden = true
+        emptyViewSets(viewHidden: emptyViewHidden)
     }
     
     private func configurateMapView() {
@@ -71,6 +80,24 @@ class MapController: UIViewController {
         }
     }
     
+    private func check(error: String) {
+        if error == "DecodeError" {
+            self.alertResponceCrash()
+        } else {
+            emptyViewHidden = false
+            emptyViewSets(viewHidden: emptyViewHidden)
+        }
+        self.activityIndicator.stopAnimating()
+    }
+    
+    private func emptyViewSets(viewHidden: Bool) {
+        emptyView.isHidden = viewHidden
+        mapView.isHidden = !viewHidden
+        cityCollectionView.isHidden = !viewHidden
+        filterCollectionView.isHidden = !viewHidden
+        createRadiusButtonOutlet.isHidden = !viewHidden
+    }
+    
     @IBAction func createRadiusDidTap(_ sender: Any) {
         mapView.clear()
         clusterManager?.clearItems()
@@ -87,8 +114,7 @@ class MapController: UIViewController {
                 self.createMarker(coordinate: CLLocationCoordinate2D(latitude: latitude, longitude: longitude), position: myPosition, type: .filial)
             }
         } failure: { error in
-            self.activityIndicator.stopAnimating()
-            self.alertResponceCrash()
+            self.check(error: error)
         }
         
         FilialProvider().getFilialsInfo { result in
@@ -99,8 +125,7 @@ class MapController: UIViewController {
                 self.activityIndicator.stopAnimating()
                 }
         } failure: { error in
-            self.activityIndicator.stopAnimating()
-            self.alertResponceCrash()
+            self.check(error: error)
         }
     }
     
@@ -258,9 +283,7 @@ extension MapController {
             self.drawAtm(source: result)
             self.activityIndicator.stopAnimating()
         } failure: { error in
-            print("We have \(error)")
-            self.alertResponceCrash()
-            self.activityIndicator.stopAnimating()
+            self.check(error: error)
         }
     }
     
@@ -270,8 +293,7 @@ extension MapController {
             self.drawFilial(source: result)
             self.activityIndicator.stopAnimating()
         } failure: { error in
-            print("We have \(error)")
-            self.activityIndicator.stopAnimating()
+            self.check(error: error)
         }
     }
     

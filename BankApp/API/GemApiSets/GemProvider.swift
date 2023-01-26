@@ -15,7 +15,10 @@ final class GemProvider {
         provider.request(.getStonesInfo) { result in
             switch result {
                 case .success(let response):
-                    guard let stonesInfo = try? JSONDecoder().decode([StoneModel].self, from: response.data) else { return }
+                    guard let stonesInfo = try? JSONDecoder().decode([StoneModel].self, from: response.data) else { return failure("Decode error") }
+                    if stonesInfo.count == 0 {
+                        failure("Empty response")
+                    }
                     RealmManager<RequestModel>().write(object: RequestModel(date: Date(), statusCode: response.statusCode, type: RequestType.gems.rawValue))
                     success(stonesInfo)
                 case .failure(let error):
@@ -28,14 +31,14 @@ final class GemProvider {
         provider.request(.getIngotInfo) { result in
             switch result {
                 case .success(let response):
-                    guard let ingotsInfo = try? JSONDecoder().decode([IngotModel].self, from: response.data) else { return }
+                    guard let ingotsInfo = try? JSONDecoder().decode([IngotModel].self, from: response.data) else { return failure("Decode error") }
                     if ingotsInfo.count == 0 {
                         failure("Empty response")
                     }
                     RealmManager<RequestModel>().write(object: RequestModel(date: Date(), statusCode: response.statusCode, type: RequestType.ingots.rawValue))
                     succes(ingotsInfo)
                 case .failure(let error):
-                    print(error.localizedDescription)
+                    failure(error.localizedDescription)
             }
         }
     }

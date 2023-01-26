@@ -11,8 +11,8 @@ class IngotViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
-    @IBOutlet weak var emptyContainerView: UIView!
     @IBOutlet weak var segmentOutlet: UISegmentedControl!
+    @IBOutlet weak var emptyView: EmptyView!
     
     private var ingotType: IngotType = .gold
     private var ingotArray = [IngotModel]()
@@ -33,10 +33,6 @@ class IngotViewController: UIViewController {
         tableView.dataSource = self
         tableView.register(UINib(nibName: IngotCell.id, bundle: nil), forCellReuseIdentifier: IngotCell.id)
         
-        emptyContainerView.alpha = 0.8
-        emptyContainerView.isHidden = true
-        segmentOutlet.isHidden = true
-        
         navigationController?.navigationBar.prefersLargeTitles = true
         navigationController?.navigationBar.tintColor = .systemCyan
         navigationItem.title = "Драгоценные металлы"
@@ -51,26 +47,25 @@ class IngotViewController: UIViewController {
                     self.ingotArray.append(model)
                 }
                 self.tableView.reloadData()
-                self.emptyImageSet()
             }
-            self.activityIndicator.stopAnimating()
+            self.emptyImageSet()
         } failure: { error in
             self.emptyImageSet()
-            self.activityIndicator.stopAnimating()
         }
     }
     
     private func emptyImageSet() {
         tableView.reloadData()
         if ingotArray.isEmpty {
-            emptyContainerView.isHidden = false
+            emptyView.isHidden = false
             tableView.isHidden = true
             segmentOutlet.isHidden = true
         } else {
-            emptyContainerView.isHidden = true
+            emptyView.isHidden = true
             tableView.isHidden = false
             segmentOutlet.isHidden = false
         }
+        activityIndicator.stopAnimating()
     }
     
     @IBAction func segmentChangeValue(_ sender: UISegmentedControl) {

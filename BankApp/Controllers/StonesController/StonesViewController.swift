@@ -11,6 +11,7 @@ class StonesViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+    @IBOutlet weak var emptyView: EmptyView!
     
     private var sorted = false
     private var stonesArray = [StoneModel]() {
@@ -54,10 +55,22 @@ class StonesViewController: UIViewController {
         activityIndicator.startAnimating()
         GemProvider().getStonesInfo { result in
             self.stonesArray = result
-            self.activityIndicator.stopAnimating()
+            self.emptyViewSet()
         } failure: { error in
-            self.activityIndicator.stopAnimating()
+            self.emptyViewSet()
         }
+    }
+    
+    private func emptyViewSet() {
+        tableView.reloadData()
+        if stonesArray.isEmpty {
+            tableView.isHidden = true
+            emptyView.isHidden = false
+        } else {
+            tableView.isHidden = false
+            emptyView.isHidden = true
+        }
+        activityIndicator.stopAnimating()
     }
     
 }

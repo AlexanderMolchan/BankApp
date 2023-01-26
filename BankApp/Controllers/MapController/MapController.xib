@@ -12,6 +12,8 @@
             <connections>
                 <outlet property="activityIndicator" destination="RQR-n0-r7q" id="5iM-dP-SWw"/>
                 <outlet property="cityCollectionView" destination="WJ9-J7-hmB" id="JrI-ty-xJl"/>
+                <outlet property="createRadiusButtonOutlet" destination="NwD-gJ-yTT" id="Ojh-D8-tx4"/>
+                <outlet property="emptyView" destination="MS6-d9-6sN" id="jOK-fQ-0XX"/>
                 <outlet property="filterCollectionView" destination="vMQ-ZC-Mww" id="l0F-76-9mg"/>
                 <outlet property="mapView" destination="M8e-p2-DYj" id="EHC-PD-6bK"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
@@ -22,6 +24,10 @@
             <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MS6-d9-6sN" customClass="EmptyView" customModule="BankApp" customModuleProvider="target">
+                    <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="M8e-p2-DYj" customClass="GMSMapView">
                     <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -74,8 +80,11 @@
             <constraints>
                 <constraint firstItem="RQR-n0-r7q" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="09W-g0-x7E"/>
                 <constraint firstItem="NwD-gJ-yTT" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="452-Gz-gYR"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="MS6-d9-6sN" secondAttribute="trailing" id="4ux-xR-3DA"/>
+                <constraint firstItem="MS6-d9-6sN" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="7gW-IP-Vf3"/>
                 <constraint firstItem="vMQ-ZC-Mww" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="9iI-cD-fmO"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="NwD-gJ-yTT" secondAttribute="trailing" constant="16" id="AYM-Pp-64x"/>
+                <constraint firstAttribute="bottom" secondItem="MS6-d9-6sN" secondAttribute="bottom" id="DIQ-cA-LYT"/>
                 <constraint firstItem="vMQ-ZC-Mww" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="EEA-VB-iNZ"/>
                 <constraint firstItem="M8e-p2-DYj" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="HUl-XX-080"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="M8e-p2-DYj" secondAttribute="trailing" id="L4e-jl-Clk"/>
@@ -84,6 +93,7 @@
                 <constraint firstItem="vMQ-ZC-Mww" firstAttribute="top" secondItem="WJ9-J7-hmB" secondAttribute="bottom" constant="10" id="WnE-la-phW"/>
                 <constraint firstItem="RQR-n0-r7q" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="byP-bL-m2p"/>
                 <constraint firstItem="WJ9-J7-hmB" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="fkb-f7-78B"/>
+                <constraint firstItem="MS6-d9-6sN" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="vgP-BE-EJ0"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="vMQ-ZC-Mww" secondAttribute="bottom" constant="10" id="wwJ-5f-7WN"/>
                 <constraint firstAttribute="bottom" secondItem="M8e-p2-DYj" secondAttribute="bottom" id="xew-H3-7gD"/>
             </constraints>

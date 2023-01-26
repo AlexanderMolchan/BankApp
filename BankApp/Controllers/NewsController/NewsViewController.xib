@@ -21,6 +21,10 @@
             <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LAn-vL-ytG" customClass="EmptyView" customModule="BankApp" customModuleProvider="target">
+                    <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                </view>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="cxV-1A-Elg">
                     <rect key="frame" x="0.0" y="59" width="393" height="759"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -29,10 +33,6 @@
                     <rect key="frame" x="178" y="407.66666666666669" width="37" height="37"/>
                     <color key="color" systemColor="systemRedColor"/>
                 </activityIndicatorView>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LAn-vL-ytG" customClass="EmptyView" customModule="BankApp" customModuleProvider="target">
-                    <rect key="frame" x="0.0" y="0.0" width="393" height="818"/>
-                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                </view>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -40,9 +40,9 @@
                 <constraint firstItem="d3q-br-igw" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="14V-SG-Kmb"/>
                 <constraint firstItem="LAn-vL-ytG" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="5CT-YW-hwa"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="cxV-1A-Elg" secondAttribute="trailing" id="Ndj-jx-QSO"/>
+                <constraint firstAttribute="bottom" secondItem="LAn-vL-ytG" secondAttribute="bottom" id="Q6j-IL-3ey"/>
                 <constraint firstItem="LAn-vL-ytG" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="TjN-Ar-M4I"/>
                 <constraint firstItem="d3q-br-igw" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="VUx-hZ-QZq"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="LAn-vL-ytG" secondAttribute="bottom" id="Wlk-GG-C7Q"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="cxV-1A-Elg" secondAttribute="bottom" id="Zye-88-nU3"/>
                 <constraint firstItem="cxV-1A-Elg" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="b57-gc-NcD"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="LAn-vL-ytG" secondAttribute="trailing" id="d11-P5-uXh"/>

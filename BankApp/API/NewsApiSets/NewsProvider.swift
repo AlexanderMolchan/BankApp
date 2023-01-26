@@ -15,7 +15,10 @@ final class NewsProvider {
         provider.request(.getNews) { result in
             switch result {
                 case .success(let response):
-                    guard let news = try? JSONDecoder().decode([NewsModel].self, from: response.data) else { return }
+                    guard let news = try? JSONDecoder().decode([NewsModel].self, from: response.data) else { return failure("Decode error") }
+                    if news.count == 0 {
+                        failure("Empty response")
+                    }
                     RealmManager<RequestModel>().write(object: RequestModel(date: Date(), statusCode: response.statusCode, type: RequestType.news.rawValue))
                     success(news)
                 case .failure(let error):
