@@ -11,6 +11,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="NewsViewController" customModule="BankApp" customModuleProvider="target">
             <connections>
                 <outlet property="activityIndicator" destination="d3q-br-igw" id="fO0-vI-4jK"/>
+                <outlet property="emptyView" destination="LAn-vL-ytG" id="Roi-a4-8K2"/>
                 <outlet property="tableView" destination="cxV-1A-Elg" id="PJe-5v-HLX"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -28,18 +29,26 @@
                     <rect key="frame" x="178" y="407.66666666666669" width="37" height="37"/>
                     <color key="color" systemColor="systemRedColor"/>
                 </activityIndicatorView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LAn-vL-ytG" customClass="EmptyView" customModule="BankApp" customModuleProvider="target">
+                    <rect key="frame" x="0.0" y="0.0" width="393" height="818"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                </view>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
                 <constraint firstItem="d3q-br-igw" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="14V-SG-Kmb"/>
+                <constraint firstItem="LAn-vL-ytG" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="5CT-YW-hwa"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="cxV-1A-Elg" secondAttribute="trailing" id="Ndj-jx-QSO"/>
+                <constraint firstItem="LAn-vL-ytG" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="TjN-Ar-M4I"/>
                 <constraint firstItem="d3q-br-igw" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="VUx-hZ-QZq"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="LAn-vL-ytG" secondAttribute="bottom" id="Wlk-GG-C7Q"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="cxV-1A-Elg" secondAttribute="bottom" id="Zye-88-nU3"/>
                 <constraint firstItem="cxV-1A-Elg" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="b57-gc-NcD"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="LAn-vL-ytG" secondAttribute="trailing" id="d11-P5-uXh"/>
                 <constraint firstItem="cxV-1A-Elg" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="hvu-bp-UU9"/>
             </constraints>
-            <point key="canvasLocation" x="58" y="21"/>
+            <point key="canvasLocation" x="57.251908396946561" y="20.422535211267608"/>
         </view>
     </objects>
     <resources>
