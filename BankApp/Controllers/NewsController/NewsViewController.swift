@@ -12,6 +12,7 @@ class NewsViewController: UIViewController, NewsDelegate {
 
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+    @IBOutlet weak var emptyView: EmptyView!
     
     private var newsArray = [NewsModel]() {
         didSet {
@@ -24,6 +25,7 @@ class NewsViewController: UIViewController, NewsDelegate {
         navigationBarSettings()
         tableViewSettingas()
         getNewsData()
+        emptyView.isHidden = true
     }
     
     private func tableViewSettingas() {
