@@ -20,7 +20,10 @@ final class FilialProvider {
         provider.request(.getAtmInfo(city: city)) { result in
             switch result {
                 case .success(let response):
-                    guard let atmInfo = try? JSONDecoder().decode([AtmInfo].self, from: response.data) else { return failure("Empty") }
+                    guard let atmInfo = try? JSONDecoder().decode([AtmInfo].self, from: response.data) else { return failure("DecodeError") }
+                    if atmInfo.count == 0 {
+                        failure("Empty Array")
+                    }
                     RealmManager<RequestModel>().write(object: RequestModel(date: Date(), statusCode: response.statusCode, type: RequestType.atm.rawValue))
                     success(atmInfo)
                 case .failure(let error):
@@ -33,7 +36,10 @@ final class FilialProvider {
         provider.request(.getFilials(city: city)) { result in
             switch result {
                 case .success(let response):
-                    guard let filialInfo = try? JSONDecoder().decode([FilialInfo].self, from: response.data) else { return }
+                    guard let filialInfo = try? JSONDecoder().decode([FilialInfo].self, from: response.data) else { return failure("DecodeError") }
+                    if filialInfo.count == 0 {
+                        failure("Empty Array")
+                    }
                     RealmManager<RequestModel>().write(object: RequestModel(date: Date(), statusCode: response.statusCode, type: RequestType.filials.rawValue))
                     success(filialInfo)
                 case .failure(let error):

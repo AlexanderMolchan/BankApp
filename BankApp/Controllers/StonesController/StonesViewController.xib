@@ -11,6 +11,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="StonesViewController" customModule="BankApp" customModuleProvider="target">
             <connections>
                 <outlet property="activityIndicator" destination="Ntr-ul-bXL" id="anx-LT-xl4"/>
+                <outlet property="emptyView" destination="3X5-sy-dWm" id="6nk-xt-r94"/>
                 <outlet property="tableView" destination="s8Q-9P-KD9" id="kMb-q0-zWb"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -20,6 +21,10 @@
             <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3X5-sy-dWm" customClass="EmptyView" customModule="BankApp" customModuleProvider="target">
+                    <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                </view>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="s8Q-9P-KD9">
                     <rect key="frame" x="0.0" y="59" width="393" height="759"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -32,14 +37,18 @@
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
+                <constraint firstItem="3X5-sy-dWm" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="Ko3-9g-CVG"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="3X5-sy-dWm" secondAttribute="trailing" id="LAS-82-v5H"/>
                 <constraint firstItem="s8Q-9P-KD9" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="Rks-GD-Rz8"/>
                 <constraint firstItem="Ntr-ul-bXL" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="TBE-JL-0nR"/>
                 <constraint firstItem="Ntr-ul-bXL" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="YJ1-6z-Hed"/>
+                <constraint firstItem="3X5-sy-dWm" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="aho-sU-zA0"/>
+                <constraint firstAttribute="bottom" secondItem="3X5-sy-dWm" secondAttribute="bottom" id="bAs-xV-Kh5"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="s8Q-9P-KD9" secondAttribute="trailing" id="gU3-5y-hbp"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="s8Q-9P-KD9" secondAttribute="bottom" id="iC6-72-N0m"/>
                 <constraint firstItem="s8Q-9P-KD9" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="q9F-Da-5Yr"/>
             </constraints>
-            <point key="canvasLocation" x="117" y="20"/>
+            <point key="canvasLocation" x="116.79389312977099" y="19.718309859154932"/>
         </view>
     </objects>
     <resources>

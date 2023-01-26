@@ -25,7 +25,6 @@ class NewsViewController: UIViewController, NewsDelegate {
         navigationBarSettings()
         tableViewSettingas()
         getNewsData()
-        emptyView.isHidden = true
     }
     
     private func tableViewSettingas() {
@@ -45,10 +44,22 @@ class NewsViewController: UIViewController, NewsDelegate {
         activityIndicator.startAnimating()
         NewsProvider().getNews { result in
             self.newsArray = result
-            self.activityIndicator.stopAnimating()
-        } failure: { _ in
-            self.activityIndicator.stopAnimating()
+            self.emptyViewSet()
+        } failure: { error in
+            self.emptyViewSet()
         }
+    }
+    
+    private func emptyViewSet() {
+        tableView.reloadData()
+        if newsArray.isEmpty {
+            tableView.isHidden = true
+            emptyView.isHidden = false
+        } else {
+            tableView.isHidden = false
+            emptyView.isHidden = true
+        }
+        activityIndicator.stopAnimating()
     }
 
 }
