@@ -21,7 +21,6 @@ struct FilialsCity: Decodable {
         self.city = try container.decode(String.self, forKey: .city)
         self.cityType = try container.decode(String.self, forKey: .cityType)
     }
-    
 }
 
 struct AtmCity: Decodable {
@@ -38,7 +37,6 @@ struct AtmCity: Decodable {
         self.city = try container.decode(String.self, forKey: .city)
         self.cityType = try container.decode(String.self, forKey: .cityType)
     }
-    
 }
 
 struct AtmInfo: Decodable {
@@ -70,7 +68,6 @@ struct AtmInfo: Decodable {
         city = try container.decode(String.self, forKey: .city)
         atmError = try container.decode(String.self, forKey: .atmError)
     }
-    
 }
 
 struct FilialInfo: Decodable {
@@ -102,5 +99,4 @@ struct FilialInfo: Decodable {
         city = try container.decode(String.self, forKey: .city)
         phone = try container.decode(String.self, forKey: .phone)
     }
-    
 }

@@ -84,11 +84,11 @@ extension NewsViewController: UITableViewDataSource, UITableViewDelegate {
     
     func present(news: NewsModel) {
         let presentedVc = PresentedNewsController(nibName: String(describing: PresentedNewsController.self), bundle: nil)
-            presentedVc.presentedNews = news
-            present(presentedVc, animated: true)
-        }
-    
+        presentedVc.presentedNews = news
+        present(presentedVc, animated: true)
     }
+    
+}
 
     
 

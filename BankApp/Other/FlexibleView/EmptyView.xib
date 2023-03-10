@@ -4,7 +4,6 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
         <capability name="Image references" minToolsVersion="12.0"/>
-        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -20,7 +19,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="UsH-JD-Sht">
-                    <rect key="frame" x="96.666666666666686" y="319.33333333333331" width="200" height="201.99999999999994"/>
+                    <rect key="frame" x="96.666666666666686" y="290" width="200" height="202"/>
                     <color key="tintColor" systemColor="systemCyanColor"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="200" id="806-mW-bm5"/>
@@ -29,29 +28,28 @@
                     <imageReference key="image" image="lock.icloud.fill" catalog="system" symbolScale="large"/>
                 </imageView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ошибка при выполнении запроса. Повторите позже." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lvX-bi-hyW">
-                    <rect key="frame" x="16" y="541" width="361" height="50"/>
+                    <rect key="frame" x="16" y="511.66666666666674" width="361" height="50"/>
                     <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="23"/>
                     <color key="textColor" systemColor="systemCyanColor"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="We are sorry   :(" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L3h-Nu-Ccv">
-                    <rect key="frame" x="16" y="264" width="361" height="37"/>
+                    <rect key="frame" x="16" y="234.66666666666666" width="361" height="36.999999999999972"/>
                     <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="34"/>
                     <color key="textColor" systemColor="systemCyanColor"/>
                     <nil key="highlightedColor"/>
                 </label>
             </subviews>
-            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="lvX-bi-hyW" secondAttribute="trailing" constant="16" id="14Z-i6-Tkq"/>
-                <constraint firstItem="UsH-JD-Sht" firstAttribute="centerX" secondItem="vUN-kp-3ea" secondAttribute="centerX" id="2L7-mt-DiS"/>
+                <constraint firstAttribute="trailing" secondItem="lvX-bi-hyW" secondAttribute="trailing" constant="16" id="14Z-i6-Tkq"/>
+                <constraint firstItem="UsH-JD-Sht" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="2L7-mt-DiS"/>
                 <constraint firstItem="lvX-bi-hyW" firstAttribute="top" secondItem="UsH-JD-Sht" secondAttribute="bottom" constant="20" id="Eil-hn-ocm"/>
-                <constraint firstItem="lvX-bi-hyW" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="16" id="U5d-Z4-Fh1"/>
+                <constraint firstItem="lvX-bi-hyW" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="16" id="U5d-Z4-Fh1"/>
                 <constraint firstItem="UsH-JD-Sht" firstAttribute="top" secondItem="L3h-Nu-Ccv" secondAttribute="bottom" constant="20" id="bTA-aN-tKV"/>
                 <constraint firstItem="L3h-Nu-Ccv" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="16" id="eIq-TV-VDR"/>
-                <constraint firstItem="UsH-JD-Sht" firstAttribute="centerY" secondItem="vUN-kp-3ea" secondAttribute="centerY" id="ncL-Ht-x2g"/>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="L3h-Nu-Ccv" secondAttribute="trailing" constant="16" id="xR4-QM-Ou4"/>
+                <constraint firstItem="UsH-JD-Sht" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="ncL-Ht-x2g"/>
+                <constraint firstAttribute="trailing" secondItem="L3h-Nu-Ccv" secondAttribute="trailing" constant="16" id="xR4-QM-Ou4"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <point key="canvasLocation" x="-376" y="171"/>

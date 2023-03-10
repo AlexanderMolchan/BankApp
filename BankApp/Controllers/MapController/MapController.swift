@@ -296,20 +296,6 @@ extension MapController {
             self.check(error: error)
         }
     }
-    
-//    private func newdrawMarkersFor(index: IndexPath, city: String) {
-//        switch selectedFilter {
-//
-//            case .all:
-//                <#code#>
-//            case .atm:
-//                <#code#>
-//            case .filial:
-//                <#code#>
-//        }
-//
-//        // нужно сделать короче, обернуть функции запроса в отдельные функции.
-//    }
 
     private func drawAtm(source: [AtmInfo]) {
         source.forEach { atm in

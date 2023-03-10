@@ -26,5 +26,4 @@ final class NewsProvider {
             }
         }
     }
-    
 }

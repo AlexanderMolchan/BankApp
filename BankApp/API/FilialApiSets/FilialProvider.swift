@@ -74,6 +74,5 @@ final class FilialProvider {
             }
         }
     }
-    
 }
 
