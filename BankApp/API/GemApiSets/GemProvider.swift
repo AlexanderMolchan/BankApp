@@ -42,5 +42,4 @@ final class GemProvider {
             }
         }
     }
-    
 }

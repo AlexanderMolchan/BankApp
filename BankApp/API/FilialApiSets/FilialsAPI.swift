@@ -66,6 +66,5 @@ extension FilialsApi: TargetType {
                 return URLEncoding.queryString
         }
     }
-    
 }
 

@@ -30,5 +30,4 @@ struct NewsModel: Decodable {
         self.date = try container.decode(String.self, forKey: .date)
         self.link = try container.decode(String.self, forKey: .link)
     }
-    
 }

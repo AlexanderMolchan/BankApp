@@ -39,7 +39,6 @@ struct StoneModel: Decodable {
         self.city = try container.decode(String.self, forKey: .city)
         self.filialNumber = try container.decode(String.self, forKey: .filialNumber)
     }
-    
 }
 
 struct IngotModel: Decodable {
@@ -83,5 +82,4 @@ struct IngotModel: Decodable {
         self.city = try container.decode(String.self, forKey: .city)
         self.filialNumber = try container.decode(String.self, forKey: .filialNumber)
     }
-    
 }

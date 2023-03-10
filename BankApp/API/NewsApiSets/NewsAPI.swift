@@ -46,5 +46,4 @@ extension NewsAPI: TargetType {
     var encoding: ParameterEncoding {
         return URLEncoding.queryString
     }
-    
 }
